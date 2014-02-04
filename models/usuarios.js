@@ -11,7 +11,7 @@ var usuarioModel = {};
 //obtenemos un articulo por su tipo
 usuarioModel.getPass = function(nombre, pass, callback)
 {
-    client.query('SELECT * FROM usuario WHERE usr_login = ? AND usr_pass = ? ', [nombre, pass], function(error, row) {
+    client.query('SELECT * FROM usuario WHERE usr_login = $1 AND usr_pass = $2 ', [nombre, pass], function(error, row) {
         if(error)
         {
             throw error;
@@ -26,7 +26,7 @@ usuarioModel.getPass = function(nombre, pass, callback)
 usuarioModel.setUser = function(login, pass, nombre, apell, mail, direccion, callback)
 {
     
-    client.query('INSERT INTO usuario VALUES(?,?,?,?,?,?)', [login, pass, nombre, apell, mail, direccion], function(error, row) {
+    client.query('INSERT INTO usuario VALUES($1,$2,$3,$4,$5,$6)', [login, pass, nombre, apell, mail, direccion], function(error, row) {
         if(error){
             throw error;
         } else {
