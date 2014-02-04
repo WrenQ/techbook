@@ -46,7 +46,7 @@ articuloModel.getTVs = function(pulgadas,callback)
 //Búsqueda de artículos en general
 articuloModel.getArticulos = function(cadena,callback)
 {
-    client.query('SELECT * FROM articulo WHERE art_nombre LIKE $1 OR art_descrip LIKE $2 OR art_procesador LIKE $3 OR art_fabric LIKE $4h',
+    client.query('SELECT * FROM articulo WHERE art_nombre LIKE $1 OR art_descrip LIKE $2 OR art_procesador LIKE $3 OR art_fabric LIKE $4',
         [cadena, cadena, cadena, cadena], function(error, results) {
         if(error)
         {
