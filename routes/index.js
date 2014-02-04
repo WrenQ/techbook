@@ -58,7 +58,7 @@ module.exports = function (app) {
 		
 	app.post('/', function(req, res) {
 		usuarioModel.getPass(req.body.nUsuario, req.body.clave, function (err, results) {
-			usuario = results[0].usr_nombre;
+			usuario = results.rows[0].usr_nombre;
 			if(results.length != 0){
 				res.render('index', { usuario : usuario });
 			} else {
