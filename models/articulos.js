@@ -51,7 +51,7 @@ articuloModel.getArticulosCatalogo = function(cadena,callback)
     client.query('SELECT * FROM articulo WHERE art_nombre = $1', [cadena], function (error, results) {
         if(error)
         {
-            console.log(throw error);
+            console.log(error);
         }
         else
         {   
