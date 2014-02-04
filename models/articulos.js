@@ -1,16 +1,14 @@
 //llamada al paquete mysql
-var mysql = require('mysql'),
-//creamos la conexion a nuestra base de datos con los datos de acceso de cada uno
-connection = mysql.createConnection(
-    {
-        host: 'localhost',
-        user: 'root', 
-        port: '3307', 
-        password: '',
-        database: 'techbook'
+var pg = require('pg'),
+    conString = "postgres://iowvvikynknmfu:waBSsvgpeZ45Z2rdyrfJDZxClV@ec2-23-21-185-168.compute-1.amazonaws.com:5432/dpoake3pqalcl",
+    client = new pg.Client(conString);
+//Nos conectamos a la Base de Datos
+client.connect();
+client.query('set schema \'techbook\'', function(err, rows) {
+    if(err){
+        console.log(err);
     }
-);
- 
+});
 //creamos un objeto para ir almacenando todo lo que necesitemos
 var articuloModel = {};
  
@@ -37,7 +35,7 @@ articuloModel.getArticulos = function(cadena,callback)
         [cadena, cadena, cadena, cadena], function(error, results) {
         if(error)
         {
-            throw error;
+            console.log(error);
         }
         else
         {   
@@ -49,19 +47,18 @@ articuloModel.getArticulos = function(cadena,callback)
 //Búsqueda de artículos por nombre
 articuloModel.getArticulosCatalogo = function(cadena,callback)
 {
-    if (connection)
-    {
-        connection.query('SELECT * FROM articulo WHERE art_nombre = ?', [cadena], function (error, row) {
-            if(error)
-            {
-                throw error;
-            }
-            else
-            {   
-                callback(null, row);
-            }
-        });
-    }
+    
+    client.query('SELECT * FROM articulo WHERE art_nombre = $1', [cadena], function (error, results) {
+        if(error)
+        {
+            console.log(throw error);
+        }
+        else
+        {   
+            callback(null, results.rows);
+        }
+    });
+
 }
 
 
@@ -69,19 +66,16 @@ articuloModel.getArticulosCatalogo = function(cadena,callback)
  
 articuloModel.getMoviles = function(so,callback)
 {
-    if (connection)
-    {
-        connection.query('SELECT * FROM articulo WHERE art_tipo = \'smartphone\' AND art_sistOper = ?', [so], function(error, row) {
-            if(error)
-            {
-                throw error;
-            }
-            else
-            {
-                callback(null, row);
-            }
-        });
-    }
+    client.query('SELECT * FROM articulo WHERE art_tipo = \'smartphone\' AND art_sistOper = $1', [so], function(error, results) {
+        if(error)
+        {
+            console.log(error);
+        }
+        else
+        {
+            callback(null, results.rows);
+        }
+    });
 }
 //exportamos el objeto para tenerlo disponible en la zona de rutas
 module.exports = articuloModel;
