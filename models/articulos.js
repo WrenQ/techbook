@@ -78,7 +78,7 @@ articuloModel.getArticulosCatalogo = function(cadena,callback)
  
 articuloModel.getMoviles = function(so,callback)
 {
-    client.query('SELECT * FROM articulo WHERE art_tipo = \'smartphone\' AND art_sistOper = $1', [so], function(error, results) {
+    client.query('SELECT * FROM articulo WHERE art_tipo = \'smartphone\' AND art_sistoper = $1', [so], function(error, results) {
         if(error)
         {
             console.log(error);
