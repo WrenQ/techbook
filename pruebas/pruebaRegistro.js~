@@ -1,0 +1,8 @@
+require('should');
+
+describe("Prueba de condiciones para el registro", function (){
+    it("Contraseña con más de 5 caracteres", function(){
+       
+    });
+
+});

@@ -1,0 +1,353 @@
+body {
+   font: normal .8em/1.5em Arial, Helvetica, sans-serif;
+   background: #ebebeb;
+   width: 900px;
+   margin: 100px auto;
+   color: #666;
+}
+
+a {
+   color: #333;
+}
+
+
+/*////////////////////////// MENÚ SUPERIOR /////////////////////////////////*/
+
+#nav {
+   margin: 0;
+   margin-left: -12.5%;
+   margin-top:-10%;
+   padding: 1% 0px 0;
+   background: orange  repeat-x 0 -110px;
+   line-height: 100%;
+   width: 120%;
+
+   border-radius: 2em;
+   -webkit-border-radius: 2em;   /* para Chrome */
+   -moz-border-radius: 2em;   /* para Mozilla */
+
+   -webkit-box-shadow: 0 1px 3px rgba(0,0,0, .4);   /* para Chrome */
+   -moz-box-shadow: 0 1px 3px rgba(0,0,0, .4);   /* para Mozilla */
+}
+#nav li, form {
+   margin: 0 5px;
+   padding: 0 0 8px;
+   float: left;
+   position: relative;
+   list-style: none;
+   margin-left: 5%;
+}
+
+#nav form {
+   font-family: "Trebuchet MS";
+   font-size: 0.9em;
+   font-weight: bold;
+   color: orange;
+   text-decoration: none;
+   display: block;
+
+   -webkit-border-radius: 1.6em;   /* para Chrome */
+   -moz-border-radius: 1.6em;   /* para Mozilla */
+   
+   text-shadow: 0 1px 1px rgba(0,0,0, .3);
+}
+
+/*Estado normal del enlace*/
+#nav a {
+   font-family: "Trebuchet MS";
+   font-size: 1.3em;
+   font-weight: bold;
+   color: #e7e5e5;
+   text-decoration: none;
+   display: block;
+   padding:  8px 20px;
+   margin: 0;
+
+   -webkit-border-radius: 1.6em;   /* para Chrome */
+   -moz-border-radius: 1.6em;   /* para Mozilla */
+   
+   text-shadow: 0 1px 1px rgba(0,0,0, .3);
+}
+
+#nav a:hover {
+   background: white;
+   color: orange;
+}
+
+/* Aspecto de enlace en estado hover */
+#nav .current a, #nav li:hover > a {
+   background: white url() repeat-x 0 -40px;
+   color: orange;
+   border-top: solid 1px #f8f8f8;
+
+   -webkit-box-shadow: 0 1px 1px rgba(0,0,0, .2);   /* para Chrome */
+   -moz-box-shadow: 0 1px 1px rgba(0,0,0, .2);   /* para Mozilla */
+   box-shadow: 0 5px 5px rgba(0,0,0, .2);   /* para Mozilla */
+
+   text-shadow: 0 5px 0 rgba(255,255,255, 1);
+}
+
+/* Aspecto de los subenlaces del menu desplegable */
+#nav ul li:hover a, #nav li:hover li a {
+   background: none;
+   border: none;
+   color: orange;
+
+   -webkit-box-shadow: none;
+   -moz-box-shadow: none;
+}
+
+#nav ul a:hover {
+   background: orange  repeat-x 0 -100px !important;
+   color: white !important;
+
+   -webkit-border-radius: 0;   /* para Chrome */
+   -moz-border-radius: 0;   /* para Mozilla */
+
+   text-shadow: 0 1px 1px rgba(0,0,0, .1);
+}
+
+/* Desplegable */
+#nav li:hover > ul {
+   display: block;
+}
+
+/* Caja de Submenús desplegables */
+#nav ul {
+   display: none;
+
+   margin: 0;
+   padding: 0;
+
+   width: 185px;
+   position: absolute;
+   top: 35px;
+   left: 0;
+   background: white  repeat-x 0 0; /*Fondo de la caja desplegable */
+   border: solid 2px white;
+
+   -webkit-border-radius: 10px; /* para Chrome */
+   -moz-border-radius: 10px;   /* para Mozilla */
+   border-radius: 10px;
+
+   -webkit-box-shadow: 0 1px 3px rgba(0,0,0, .3);   /* para Chrome */
+   -moz-box-shadow: 0 1px 3px rgba(0,0,0, .3);   /* para Mozilla */
+   box-shadow: 0 1px 3px rgba(0,0,0, .3);
+}
+
+#nav ul li{
+   float: none;
+   margin: 0;
+   padding: 0;
+}
+
+#nav ul a {
+   font-weight: normal;
+   text-shadow: 0 1px 0 #fff;
+}
+
+
+
+#nav ul li:first-child > a {
+   -webkit-border-top-left-radius: 9px;   /* para Chrome */
+   -moz-border-radius-topleft: 9px;   /* para Mozilla */
+
+   -webkit-border-top-right-radius: 9px;   /* para Chrome */
+   -moz-border-radius-topright: 9px;   /* para Mozilla */
+}
+#nav ul li:last-child > a {
+   -webkit-border-bottom-left-radius: 9px;   /* para Chrome */
+   -moz-border-radius-bottomleft: 9px;   /* para Mozilla */
+
+   -webkit-border-bottom-right-radius: 9px;   /* para Chrome */
+   -moz-border-radius-bottomright: 9px;   /* para Mozilla */
+}
+
+
+#nav:after {
+   content: ".";
+   display: block;
+   clear: both;
+   visibility: hidden;
+   line-height: 0;
+   height: 0;
+}
+#nav {
+   display: inline-block;
+
+} 
+
+
+html[xmlns] #nav {
+   display: block;
+}
+ 
+* html #nav {
+   height: 1%;
+}
+
+#nUsuario, #clave, #buscar {
+   -webkit-border-radius: 1.6em;   /* para Chrome */
+   -moz-border-radius: 1.6em;   /* para Mozilla */
+}
+ 
+.boton{ 
+    font-size:12px; 
+    font-family:Verdana,Helvetica; 
+    font-weight:bold; 
+    color:#0000FF; 
+    background:#A4C1FF; 
+    border:0px; 
+    width:120px; 
+    height:25px; 
+} 
+
+#buscar {
+   -webkit-border-radius: 1.6em;   /* para Chrome */
+   -moz-border-radius: 1.6em;   /* para Mozilla */
+}
+
+/* //////////////////////////////// CATÁLOGO //////////////////////////////////*/
+
+
+.catalogo {
+
+   width:100%;
+
+
+   
+   -moz-border-radius-bottomleft:13px;
+   -webkit-border-bottom-left-radius:13px;
+   border-bottom-left-radius:13px;
+   
+   -moz-border-radius-bottomright:13px;
+   -webkit-border-bottom-right-radius:13px;
+   border-bottom-right-radius:13px;
+   
+   -moz-border-radius-topright:13px;
+   -webkit-border-top-right-radius:13px;
+   border-top-right-radius:13px;
+   
+   -moz-border-radius-topleft:13px;
+   -webkit-border-top-left-radius:13px;
+   border-top-left-radius:13px;
+}
+.catalogo table{
+   width:120%;
+   margin-left: -12%;
+   height:100%;
+   padding-top: 10%;
+}
+.catalogo tr:last-child td:last-child {
+   -moz-border-radius-bottomright:13px;
+   -webkit-border-bottom-right-radius:13px;
+   border-bottom-right-radius:13px;
+}
+.catalogo table tr:first-child td:first-child {
+   -moz-border-radius-topleft:13px;
+   -webkit-border-top-left-radius:13px;
+   border-top-left-radius:13px;
+}
+.catalogo table tr:first-child td:last-child {
+   -moz-border-radius-topright:13px;
+   -webkit-border-top-right-radius:13px;
+   border-top-right-radius:13px;
+}
+.catalogo tr:last-child td:first-child{
+   -moz-border-radius-bottomleft:13px;
+   -webkit-border-bottom-left-radius:13px;
+   border-bottom-left-radius:13px;
+   
+}
+.catalogo tr:hover td{
+   background-color: orange;
+}
+
+.catalogo td{
+   vertical-align:center;
+   
+   background-color:#FFFFFF;
+
+   border-width:0px 1px 1px 0px;
+   text-align:center;
+   padding:15px;
+   font-size:14px;
+   font-family: "Trebuchet MS";
+   font-weight:normal;
+   color: #000000;
+}
+.catalogo tr:last-child td{
+   border-width:0px 1px 0px 0px;
+}
+.catalogo tr td:last-child{
+   border-width:0px 0px 1px 0px;
+}
+.catalogo tr:last-child td:last-child{
+   border-width:0px 0px 0px 0px;
+}
+.catalogo tr:first-child td{
+      background:-o-linear-gradient(bottom, #DEA004 5%, #FF6161 100%);
+   background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #DEA004), color-stop(1, #FF6161) );
+   background:-moz-linear-gradient( center top, #DEA004 5%, #FF6161 100% );
+   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#DEA004", endColorstr="#FF6161"); 
+   background: -o-linear-gradient(top,#DEA004,#FF6161);
+
+   background-color:#DEA004;
+
+   text-align:center;
+   border-width:0px 0px 1px 1px;
+   font-size:14px;
+   font-family: "Trebuchet MS";
+   font-weight:bold;
+   color: #FFFFFF;
+}
+.catalogo tr:first-child:hover td{
+   background:-o-linear-gradient(bottom, #DEA004 5%, #FF6161 100%);
+   background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #DEA004), color-stop(1, #FF6161) );
+   background:-moz-linear-gradient( center top, #DEA004 5%, #FF6161 100% );
+   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#DEA004", endColorstr="#FF6161"); 
+   background: -o-linear-gradient(top,#DEA004,#FF6161);
+
+   background-color:orange;
+}
+.catalogo tr:first-child td:first-child{
+   border-width:0px 0px 1px 0px;
+}
+.catalogo tr:first-child td:last-child{
+   border-width:0px 0px 1px 1px;
+}
+
+#enlaceArticulo {
+   font-family: "Trebuchet MS";
+   font-size: 1.3em;
+   font-weight: bold;
+   color: black;
+   text-decoration: none;
+   display: block;
+   padding:  8px 20px;
+   margin: 0;
+
+   -webkit-border-radius: 1.6em;   /* para Chrome */
+   -moz-border-radius: 1.6em;   /* para Mozilla */
+   
+   text-shadow: 0 1px 1px rgba(0,0,0, .3);
+}
+
+#enlaceArticulo :hover {
+   background: white;
+   color: orange;
+}
+
+#celdaImagen {
+   width:20%;
+}
+
+#registrar {
+   background: orange;
+   border-radius: 2em;
+   -webkit-border-radius: 2em;   /* para Chrome */
+   -moz-border-radius: 2em;   /* para Mozilla */
+
+   -webkit-box-shadow: 0 1px 3px rgba(0,0,0, .4);   /* para Chrome */
+   -moz-box-shadow: 0 1px 3px rgba(0,0,0, .4);   /* para Mozilla */
+}

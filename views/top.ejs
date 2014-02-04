@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title> TechBook </title>
+  <link href="../stylesheets/menu.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <ul id="nav">
+      <li class="current"><img id="logo" src="../images/logotipo1_techbook.png" width="100" height="100"> </img></li>
+      <li><a href="#">Smartphones</a>
+         <ul>
+            <li><a href="/smartphones/Android">Android</a></li>
+            <li><a href="/smartphones/windowsphone">Windows Phone</a></li>
+         </ul>
+      </li>
+      <li><a href="#">Tablets</a>
+         <ul>
+            <li><a href="/tablets/7">7"</a></li>
+            <li><a href="/tablets/9">9"</a></li>
+            <li><a href="/tablets/10">10"</a></li>
+         </ul>
+      </li> 
+      <li><a href="#">Smart TV</a>
+         <ul>
+            <li><a href="/smartTV/32">32"</a></li>
+            <li><a href="/smartTV/40">40"</a></li>
+            <li><a href="/smartTV/42">42"</a></li>
+         </ul>
+       </li>
+      <% if(usuario == undefined) { %>
+      <li id="bienvenida">
+        <a href="#">Login</a>
+         <ul>
+            <li>
+               <form id="login" method="post" action="/">
+                 <label for="nUsuario"> Usuario </label>
+                 <input type="text" name="nUsuario" id="nUsuario" />
+                 <label for="clave"> Contraseña </label>
+                 <input type="password" name="clave" id="clave" maxlength="10"/>
+                 <input type="submit" id="login" value="Entrar" />
+                 <label for="checkbox"><input type="checkbox" id="checkbox" />Recordar datos</label>
+               </form>
+               <center><a href="/registro" id="registrar">¿Nuevo Usuario?</a></center>
+            </li>
+         </ul>
+      </li>
+      <% } else { %>
+       <li id="bienvenida">
+             <a href="#"> <%= usuario %> </a> 
+             <ul>
+              <li> <a href="#"> Mi cuenta </a> </li>
+              <li> <a href="#"> Mis pedidos </a> </li>
+              <li> <a href="/logoff"> Desconectarme </a> </li>
+            </ul>
+
+              <% }; %>
+      </li>
+
+      <li><form method="post" action="/busqueda" ><input type="text" id="buscar" name="buscar" placeholder="  Buscar producto... "></form></li>
+   </ul>

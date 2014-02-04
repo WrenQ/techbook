@@ -1,0 +1,30 @@
+<% include top %>
+<div class="catalogo" >
+    <table  cellspacing="0">
+        <tr>
+            <td>
+                Mostrando <%= n %> resultados
+            </td>
+            <td >
+                <%= title %>
+            </td>
+            <td>
+            	P.V.P.
+            </td>
+        </tr>
+        <% art.forEach(function (a){ %>
+			<tr>
+				<td id="celdaImagen"><img src ="<%= a.art_imagen %>" width="100" height="100"></img></td>
+				<td><a id="enlaceArticulo" href="/catalogo/<%= a.art_nombre %>" target="_blank"><%= a.art_nombre %></a></td>
+				<td><%= a.art_PVP %></td>
+			</tr>
+		<% }); %>
+
+       
+    </table>
+  </div>
+<% include bottom %>
+
+
+
+

@@ -1,0 +1,12 @@
+<% include top %>
+<h1> Formulario de Registro </h1>
+<form action="/procesarRegistro" method="post">
+	<input type="text" class="campos" name="nombreUsuario" placeholder="Su nombre de usuario"><br>
+    <input type="password" class="campos" name="clave" placeholder="Su contraseña"><br>
+    <input type="text" class="campos" name="nombre" placeholder="Su nombre de pila"><br>
+    <input type="text" class="campos" name="apellidos" placeholder="Sus apellidos"><br>
+    <input type="text" class="campos" name="mail" placeholder="Su direccion de mail"><br>
+    <input type="text" class="campos" name="direccion" placeholder="Su direccion postal"><br>
+    <input type="submit" value="Registrarse">
+</form>
+<% include bottom %>
