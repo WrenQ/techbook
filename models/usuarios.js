@@ -4,7 +4,7 @@ var pg = require('pg'),
     client = new pg.Client(conString);
 //Nos conectamos a la Base de Datos
 client.connect();
- 
+client.query('set schema \'techbook\'');
 //creamos un objeto para ir almacenando todo lo que necesitemos
 var usuarioModel = {};
  
