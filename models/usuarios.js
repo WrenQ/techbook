@@ -22,6 +22,7 @@ usuarioModel.getPass = function(nombre, pass, callback)
         }
         else
         {   
+            console.log(row);
             callback(null, row);
         }
     });
