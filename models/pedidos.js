@@ -1,69 +1,45 @@
-//llamada al paquete mysql
-var mysql = require('mysql'),
-//creamos la conexion a nuestra base de datos con los datos de acceso de cada uno
-connection = mysql.createConnection(
-    {
-        host: 'localhost',
-        user: 'root', 
-        port: '3307', 
-        password: '',
-        database: 'techbook'
+var pg = require('pg'),
+    conString = "postgres://iowvvikynknmfu:waBSsvgpeZ45Z2rdyrfJDZxClV@ec2-23-21-185-168.compute-1.amazonaws.com:5432/dpoake3pqalcl",
+    client = new pg.Client(conString);
+//Nos conectamos a la Base de Datos
+client.connect();
+client.query('set schema \'techbook\'', function(err, rows) {
+    if(err){
+        console.log(err);
     }
-);
+});
  
 //creamos un objeto para ir almacenando todo lo que necesitemos
 var pedidoModel = {};
  
-//obtenemos un articulo por su tipo
+//creamos un pedido
 pedidoModel.setPedido = function(loginUser, eanArticulo, cant, importe, fecha, callback)
 {
-    if(connection){
-        connection.query('INSERT INTO pedido VALUES(?,?,?,?,?)', [loginUser, eanArticulo, cant, importe, fecha], function(error, row) {
-            if(error){
-                throw error;
-            } else {
-                callback(null, row);
-            }
-        });
-    }
+    client.query('INSERT INTO pedido VALUES($1,$2,$3,$4,$5)', [loginUser, eanArticulo, cant, importe, fecha], function(error, results) {
+        if(error){
+            console.log(error);
+        } else {
+            callback(null, results.rows);
+        }
+    });
 }
 
-//Búsqueda de artículos en general
+//Obtenemos los pedidos de un usuario
 articuloModel.getPedidos = function(loginUser,callback)
 {
-    if (connection)
-    {
-        connection.query('SELECT * FROM pedido WHERE ped_usuario = ?', [loginUser], function(error, row) {
-            if(error)
-            {
-                throw error;
-            }
-            else
-            {   
-                callback(null, row);
-            }
-        });
-    }
+    
+    client.query('SELECT * FROM pedido WHERE ped_usuario = $1', [loginUser], function(error, results) {
+        if(error)
+        {
+            console.log(error);
+        }
+        else
+        {   
+            callback(null, results.rows);
+        }
+    });
+    
 }
 
-
-
- 
-articuloModel.getMoviles = function(so,callback)
-{
-    if (connection)
-    {
-        connection.query('SELECT * FROM articulo WHERE art_tipo = \'smartphone\' AND art_sistOper = ?', [so], function(error, row) {
-            if(error)
-            {
-                throw error;
-            }
-            else
-            {
-                callback(null, row);
-            }
-        });
-    }
-}
 //exportamos el objeto para tenerlo disponible en la zona de rutas
 module.exports = articuloModel;

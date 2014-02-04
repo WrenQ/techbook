@@ -28,6 +28,21 @@ articuloModel.getTablets = function(pulgadas,callback)
     });
 }
 
+articuloModel.getTVs = function(pulgadas,callback)
+{
+
+    client.query('SELECT * FROM articulo WHERE art_tipo = \'smartTV\' AND art_pantalla = $1', [pulgadas], function(error, results) {
+        if(error)
+        {
+            console.log(error);
+        }
+        else
+        {   
+            callback(null, results.rows);
+        }
+    });
+}
+
 //Búsqueda de artículos en general
 articuloModel.getArticulos = function(cadena,callback)
 {
@@ -60,9 +75,6 @@ articuloModel.getArticulosCatalogo = function(cadena,callback)
     });
 
 }
-
-
-
  
 articuloModel.getMoviles = function(so,callback)
 {
