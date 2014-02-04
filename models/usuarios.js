@@ -15,15 +15,15 @@ var usuarioModel = {};
 //obtenemos un articulo por su tipo
 usuarioModel.getPass = function(nombre, pass, callback)
 {
-    client.query('SELECT * FROM usuario WHERE usr_login = $1 AND usr_pass = $2 ', [nombre, pass], function(error, row) {
+    client.query('SELECT * FROM usuario WHERE usr_login = $1 AND usr_pass = $2 ', [nombre, pass], function(error, results) {
         if(error)
         {
             console.log(error);
         }
         else
         {   
-            console.log(row);
-            callback(null, row);
+            console.log(results.rows);
+            callback(null, results.rows);
         }
     });
 }
