@@ -31,11 +31,11 @@ usuarioModel.getPass = function(nombre, pass, callback)
 usuarioModel.setUser = function(login, pass, nombre, apell, mail, direccion, callback)
 {
     
-    client.query('INSERT INTO usuario VALUES($1,$2,$3,$4,$5,$6)', [login, pass, nombre, apell, mail, direccion], function(error, row) {
+    client.query('INSERT INTO usuario VALUES($1,$2,$3,$4,$5,$6)', [login, pass, nombre, apell, mail, direccion], function(error, results) {
         if(error){
             console.log(error);
         } else {
-            callback(null, row);
+            callback(null, results.rows);
         }
     });
     

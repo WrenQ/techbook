@@ -17,38 +17,33 @@ var articuloModel = {};
 //obtenemos un articulo por su tipo
 articuloModel.getTablets = function(pulgadas,callback)
 {
-    if (connection)
-    {
-        connection.query('SELECT * FROM articulo WHERE art_tipo = \'tablet\' AND art_pantalla = ?', [pulgadas], function(error, row) {
-            if(error)
-            {
-                throw error;
-            }
-            else
-            {   
-                callback(null, row);
-            }
-        });
-    }
+
+    client.query('SELECT * FROM articulo WHERE art_tipo = \'tablet\' AND art_pantalla = $1', [pulgadas], function(error, results) {
+        if(error)
+        {
+            console.log(error);
+        }
+        else
+        {   
+            callback(null, results.rows);
+        }
+    });
 }
 
 //Búsqueda de artículos en general
 articuloModel.getArticulos = function(cadena,callback)
 {
-    if (connection)
-    {
-        connection.query('SELECT * FROM articulo WHERE art_nombre LIKE ? OR art_descrip LIKE ? OR art_procesador LIKE ? OR art_fabric LIKE ?',
-            [cadena, cadena, cadena, cadena], function(error, row) {
-            if(error)
-            {
-                throw error;
-            }
-            else
-            {   
-                callback(null, row);
-            }
-        });
-    }
+    client.query('SELECT * FROM articulo WHERE art_nombre LIKE $1 OR art_descrip LIKE $2 OR art_procesador LIKE $3 OR art_fabric LIKE $4h',
+        [cadena, cadena, cadena, cadena], function(error, results) {
+        if(error)
+        {
+            throw error;
+        }
+        else
+        {   
+            callback(null, results.rows);
+        }
+    });
 }
 
 //Búsqueda de artículos por nombre
