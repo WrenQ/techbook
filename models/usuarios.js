@@ -14,7 +14,7 @@ usuarioModel.getPass = function(nombre, pass, callback)
     client.query('SELECT * FROM usuario WHERE usr_login = $1 AND usr_pass = $2 ', [nombre, pass], function(error, row) {
         if(error)
         {
-            throw error;
+            console.log(error);
         }
         else
         {   
@@ -28,7 +28,7 @@ usuarioModel.setUser = function(login, pass, nombre, apell, mail, direccion, cal
     
     client.query('INSERT INTO usuario VALUES($1,$2,$3,$4,$5,$6)', [login, pass, nombre, apell, mail, direccion], function(error, row) {
         if(error){
-            throw error;
+            console.log(error);
         } else {
             callback(null, row);
         }
