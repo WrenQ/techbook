@@ -55,6 +55,8 @@ module.exports = function (app) {
 				res.render('catalogo', { art: results , title: "Resultados de la búsqueda" , articulos: articuloModel , n: results.length});
 			});
 	});
+		
+	app.post('/', function(req, res) {
 		usuarioModel.getPass(req.body.nUsuario, req.body.clave, function (err, results) {
 			usuario = results[0].usr_nombre;
 			if(results.length != 0){
