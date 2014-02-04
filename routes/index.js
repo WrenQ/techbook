@@ -36,7 +36,7 @@ module.exports = function (app) {
 		});
 	});
 
-	app.post('/registro', function (req, res) {
+	app.get('/registro', function (req, res) {
 		res.render('registro');
 	});
 
