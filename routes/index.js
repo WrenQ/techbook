@@ -46,7 +46,7 @@ module.exports = function (app) {
             res.render('index', {usuario: usuario});
         } else if (req.params.orden === 'pedidos') {
             pedidoModel.getPedidos(usuarioLogin, function (err, results) {
-                res.render('pedidosUsuario', { ped: results, title: "Pedidos de " + usuarioLogin, pedidos: pedidoModel, n: results.length, user: usuarioLogin});
+                res.render('pedidosUsuario', { ped: results, title: "Pedidos de " + usuarioLogin, pedidos: pedidoModel, articulos: articuloModel, n: results.length, user: usuarioLogin});
             });
         }
     });

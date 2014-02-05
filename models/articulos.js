@@ -89,5 +89,22 @@ articuloModel.getMoviles = function(so,callback)
         }
     });
 }
+
+articuloModel.getArticuloByEan = function(cadena,callback)
+{
+    
+    client.query('SELECT * FROM articulo WHERE art_ean = $1', [cadena], function (error, results) {
+        if(error)
+        {
+            console.log(error);
+        }
+        else
+        {   
+            callback(null, results.rows);
+        }
+    });
+
+}
+
 //exportamos el objeto para tenerlo disponible en la zona de rutas
 module.exports = articuloModel;
