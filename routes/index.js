@@ -2,7 +2,8 @@
  * GET home page.
  */
 //Obtencion del modelo 'articulosModel' para emplear sus metodos
-var articuloModel = require('../models/articulos'), usuarioModel = require('../models/usuarios'), usuario = undefined;
+var articuloModel = require('../models/articulos'), usuarioModel = require('../models/usuarios');
+    usuario = undefined;
 
 //Ruteo de la aplicación
 module.exports = function (app) {
