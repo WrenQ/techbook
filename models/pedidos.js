@@ -42,4 +42,4 @@ pedidoModel.getPedidos = function(loginUser,callback)
 }
 
 //exportamos el objeto para tenerlo disponible en la zona de rutas
-module.exports = articuloModel;
+module.exports = pedidooModel;
