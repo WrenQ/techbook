@@ -4,7 +4,7 @@
  */
 
 var express = require('express');
-
+var PGStore = require('connect-pg');
 var http = require('http');
 var path = require('path');
 
@@ -22,6 +22,7 @@ app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.session({store: new PGStore(pgConnect), secret: 'keyboard cat'}));
 
 // development only
 if ('development' === app.get('env')) {

@@ -10,7 +10,8 @@
     "express": "3.4.8",
     "ejs": "*",
     "mysql": "*",
-    "pg": "latest"
+    "pg": "latest",
+    "connect-pg": "latest"
   },
   "repository": {
     "type": "git",
