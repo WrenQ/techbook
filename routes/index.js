@@ -7,7 +7,7 @@ var articuloModel = require('../models/articulos'), usuarioModel = require('../m
 //Ruteo de la aplicación
 module.exports = function (app) {
     app.get('/', function (res) {
-        res.render('portada', {usuario: usuario});
+        res.render('index', {usuario: usuario});
     });
 
 //mostrar tablets

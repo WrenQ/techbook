@@ -14,9 +14,9 @@ a {
 /*////////////////////////// MENÚ SUPERIOR /////////////////////////////////*/
 
 #nav {
-   margin: 0;
+   margin: 10;
    margin-left: -12.5%;
-   margin-top:-10%;
+   margin-top:-11.7%;
    padding: 1% 0px 0;
    background: orange  repeat-x 0 -110px;
    line-height: 100%;
