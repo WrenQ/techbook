@@ -352,6 +352,6 @@ html[xmlns] #nav {
    -moz-box-shadow: 0 1px 3px rgba(0,0,0, .4);   /* para Mozilla */
 }
 
-#nodecorLink a {
+#nav ul li #nodecorLink a {
    text-decoration: none;
 }
