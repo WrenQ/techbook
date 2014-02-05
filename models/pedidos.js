@@ -25,7 +25,7 @@ pedidoModel.setPedido = function(loginUser, eanArticulo, cant, importe, fecha, c
 }
 
 //Obtenemos los pedidos de un usuario
-articuloModel.getPedidos = function(loginUser,callback)
+pedidoModel.getPedidos = function(loginUser,callback)
 {
     
     client.query('SELECT * FROM pedido WHERE ped_usuario = $1', [loginUser], function(error, results) {
