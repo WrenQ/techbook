@@ -1,0 +1,34 @@
+<% include top %>
+<div class="catalogo" >
+    <table  cellspacing="0">
+        <tr>
+            <td>
+                <%= title %>: <%= n %>
+            </td>
+            <td >
+                Fecha
+            </td>
+            <td>
+            	Artículo
+            </td>
+            <td>
+                Importe
+            </td>
+        </tr>
+        <% ped.forEach(function (p){ %>
+			<tr>
+				<td><%= p.ped_codigo %></td>
+				<td><%= p.ped_fecha %></td>
+				<td><%= p.ped_articulo %></td>
+                <td><%= p.ped_importe %></td>
+			</tr>
+		<% }); %>
+
+       
+    </table>
+  </div>
+<% include bottom %>
+
+
+
+
