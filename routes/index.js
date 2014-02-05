@@ -6,14 +6,14 @@ var articuloModel = require('../models/articulos'), usuarioModel = require('../m
 
 //Ruteo de la aplicación
 module.exports = function (app) {
-    app.get('/', function (res) {
+    app.get('/', function (req, res) {
         res.render('index', {usuario: usuario});
     });
 
 //mostrar tablets
     app.get('/tablets/:num', function (req, res) {
         var num = req.params.num;
-        articuloModel.getTablets(num, function (results) {
+        articuloModel.getTablets(num, function (err, results) {
             res.render('catalogo', { art: results, title: "Tablets", articulos: articuloModel, n: results.length });
         });
     });
@@ -21,7 +21,7 @@ module.exports = function (app) {
     //mostrar smartphones
     app.get('/smartphones/:tipo', function (req, res) {
         var tipo = req.params.tipo;
-        articuloModel.getMoviles(tipo, function (results) {
+        articuloModel.getMoviles(tipo, function (err, results) {
             res.render('catalogo', { art: results, title: "Smartphones " + tipo, articulos: articuloModel, n: results.length});
         });
     });
@@ -29,12 +29,12 @@ module.exports = function (app) {
     //Mostrar página emergente con el detalle del artículo (ficha técnica)
     app.get('/catalogo/:modelo', function (req, res) {
         var modelo = req.params.modelo;
-        articuloModelo.getArticulosCatalogo(modelo, function (results) {
+        articuloModelo.getArticulosCatalogo(modelo, function (err, results) {
             res.render('fichaTecnica', {art: results, articulos: articuloModel});
         });
     });
 
-    app.get('/registro', function (res) {
+    app.get('/registro', function (req, res) {
         res.render('registro');
     });
 
@@ -48,13 +48,13 @@ module.exports = function (app) {
 
     app.post('/busqueda', function (req, res) {
         console.log(req.body.buscar);
-        articuloModel.getArticulos(req.body.buscar, function (results) {
+        articuloModel.getArticulos(req.body.buscar, function (err, results) {
             res.render('catalogo', { art: results, title: "Resultados de la búsqueda", articulos: articuloModel, n: results.length});
         });
     });
 
     app.post('/', function (req, res) {
-        usuarioModel.getPass(req.body.nUsuario, req.body.clave, function (results) {
+        usuarioModel.getPass(req.body.nUsuario, req.body.clave, function (err, results) {
             usuario = results[0].usr_nombre;
             if (results.length !== 0) {
                 res.render('index', { usuario : usuario });
