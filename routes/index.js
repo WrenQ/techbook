@@ -10,7 +10,7 @@ var articuloModel = require('../models/articulos'),
 //Ruteo de la aplicación
 module.exports = function (app) {
 	app.get('/', function (req, res) {
-			res.render('index', {usuario: usuario});
+			res.render('portada', {usuario: usuario});
 	});
 	//mostrar tablets
 	app.get('/tablets/:num', function (req, res) {
