@@ -2,8 +2,8 @@
  * GET home page.
  */
 //Obtencion del modelo 'articulosModel' para emplear sus metodos
-var articuloModel = require('../models/articulos'), usuarioModel = require('../models/usuarios');
-    usuario = undefined;
+var articuloModel = require('../models/articulos'), usuarioModel = require('../models/usuarios'), pedidoModel = require('../models/pedidos');
+    usuario = undefined, usuarioLogin = undefined;
 
 //Ruteo de la aplicación
 module.exports = function (app) {
@@ -44,6 +44,10 @@ module.exports = function (app) {
             usuario = undefined;
             console.log('Me desconecto...');
             res.render('index', {usuario: usuario});
+        } else if (req.params.orden === 'pedidos') {
+            pedidoModel.getPedidos(usuarioLogin, function (err, results) {
+                res.render('catalogo', { ped: results, title: "Pedidos del usuario", pedidos: pedidoModel, n: results.length});
+            });
         }
     });
 
@@ -57,6 +61,7 @@ module.exports = function (app) {
     app.post('/', function (req, res) {
         usuarioModel.getPass(req.body.nUsuario, req.body.clave, function (err, results) {
             usuario = results[0].usr_nombre;
+            usuarioLogin = results[0].usr_login;
             if (results.length !== 0) {
                 res.render('index', { usuario : usuario });
             } else {
