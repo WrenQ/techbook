@@ -351,3 +351,7 @@ html[xmlns] #nav {
    -webkit-box-shadow: 0 1px 3px rgba(0,0,0, .4);   /* para Chrome */
    -moz-box-shadow: 0 1px 3px rgba(0,0,0, .4);   /* para Mozilla */
 }
+
+#nodecorLink a {
+   text-decoration: none;
+}
