@@ -354,4 +354,9 @@ html[xmlns] #nav {
 
 #nav ul li #nodecorLink a {
    text-decoration: none;
+   background: none;
+}
+
+#nav ul li ul li #nodecorLink a {
+   text-decoration: none;
 }
