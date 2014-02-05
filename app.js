@@ -22,7 +22,7 @@ app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.session({store: new PGStore(pgConnect), secret: 'keyboard cat'}));
+app.use(express.session({store: new PGStore(pgConnect), secret: ''}));
 
 // development only
 if ('development' === app.get('env')) {
