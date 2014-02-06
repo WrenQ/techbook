@@ -12,10 +12,10 @@ module.exports = function (app) {
     });
 
 //mostrar tablets
-    app.get('/tablets/:num', function (req, res) {
-        var num = req.params.num;
-        articuloModel.getTablets(num, function (err, results) {
-            res.render('catalogo', { art: results, title: "Tablets", articulos: articuloModel, n: results.length });
+    app.get('/tablets/:pulgadas', function (req, res) {
+        var pulgadas = req.params.pulgadas;
+        articuloModel.getTablets(pulgadas, function (err, results) {
+            res.render('catalogo', { art: results, title: "Tablets" + pulgadas + "\"", articulos: articuloModel, n: results.length });
         });
     });
 
