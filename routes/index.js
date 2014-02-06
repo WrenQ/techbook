@@ -37,7 +37,7 @@ module.exports = function (app) {
     //Mostrar página emergente con el detalle del artículo (ficha técnica)
     app.get('/catalogo/:modelo', function (req, res) {
         var modelo = req.params.modelo;
-        articuloModelo.getArticulosCatalogo(modelo, function (err, results) {
+        articuloModel.getArticulosCatalogo(modelo, function (err, results) {
             res.render('fichaTecnica', {art: results[0], articulos: articuloModel});
         });
     });
