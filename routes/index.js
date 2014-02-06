@@ -56,7 +56,7 @@ module.exports = function (app) {
                     i++;
                 });
             }*/
-            res.render('pedidosUsuario', { ped: results, title: "Pedidos de " + usuarioLogin, pedidos: pedidoModel, n: results.length, user: usuarioLogin});
+            res.render('pedidosUsuario', { ped: results, title: "Pedidos de " + usuarioLogin, n: results.length);
         });
     });
 
