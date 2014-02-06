@@ -186,6 +186,14 @@ html[xmlns] #nav {
    height: 1%;
 }
 
+#nav input[type="text"] {
+    width: 150px;
+}
+
+#nav input[type="password"] {
+    width: 150px;
+}
+
 #nUsuario, #clave, #buscar {
    -webkit-border-radius: 1.6em;   /* para Chrome */
    -moz-border-radius: 1.6em;   /* para Mozilla */
@@ -352,15 +360,16 @@ html[xmlns] #nav {
    -moz-box-shadow: 0 1px 3px rgba(0,0,0, .4);   /* para Mozilla */
 }
 
-#nav ul li ul li #nodecorLink a :hover{
-   text-decoration: none;
-   font-style: bold;
+#imagenCabecera {
+   float: center;
+   width: 300px;
+   border-image: orange 3px inset;
+   border-radius: 2px;
 }
 
-#nav input[type="text"] {
-    width: 150px;
-}
-
-#nav input[type="password"] {
-    width: 150px;
+#enlaceCompra a {
+   font-size: 2em;
+   color: orange;
+   border: orange 2px solid;
+   border-radius: 4px;
 }

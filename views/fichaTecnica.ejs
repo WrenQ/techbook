@@ -1,6 +1,6 @@
 <% include top %>
 <div class="catalogo" >
-    <img src ="<%= art.art_imagen %>" width="100" height="100"></img>
+    <img src ="<%= art.art_imagen %>" id="imagenCabecera"></img>
     <table  cellspacing="0">
         <tr>
             <td>
@@ -10,7 +10,7 @@
                 Especificaciones
             </td>
         </tr>
-        <tr>descripcion, pulgadas, procesador, resolucion, sistoper, conectividad, tipo, fabricante, imagen, pvp, callback
+        <tr>
             <td>
                 EAN
             </td>
@@ -83,6 +83,6 @@
             </td>
         </tr> 
     </table>
-    <a href="/compra/<%= art.art_ean %>" > Comprar: <%= art.art_pvp %> </a>
+    <a href="/compra/<%= art.art_ean %>" id="enlaceCompra" > Comprar: <%= art.art_pvp %> </a>
   </div>
 <% include bottom %>
