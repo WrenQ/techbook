@@ -3,7 +3,7 @@
     <ul id="fotoLink">
         <li><img src ="<%= art.art_imagen %>" id="imagenCabecera"></img></li>
         <% if (usuarioLogin != undefined) { %>
-        <center><li><a href="/compra/<%= art.art_ean %>" name="comprar" id="enlaceCompra" > Comprar: <%= art.art_pvp %> €</a></li>
+        <center><li><a href="/compra/<%= art.art_ean %>" id="enlaceCompra" > Comprar: <%= art.art_pvp %> €</a></li>
         <% } %>
     </ul> <br>
     <table  cellspacing="0">
