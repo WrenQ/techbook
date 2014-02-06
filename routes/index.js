@@ -53,7 +53,7 @@ module.exports = function (app) {
             pedidoModel.forEach(function(p) {
                 articuloModel.getArticuloByEan(p.ped_articulo, function (err, results) {
                     articulosPedido[i] = results[0];
-                    i++;
+                    i++;console.log("\n"+i+"\n");
                 });
             });
             res.render('pedidosUsuario', { ped: results, title: "Pedidos de " + usuarioLogin, pedidos: pedidoModel, articulos: articulosPedido, n: results.length, user: usuarioLogin});
