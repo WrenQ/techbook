@@ -79,7 +79,6 @@ module.exports = function (app) {
     });
 
     app.post('/procesarAltaArticulo', function (req, res) {
-        ean, nombre, descripcion, pulgadas, procesador, resolucion, sistoper, conectividad, tipo, fabricante, pvp
         articuloModel.setArticulo(req.body.eanArticulo, req.body.nombreArticulo, req.body.descripcion, req.body.pulgadas, req.body.procesador, req.body.resolucion, req.body.sistoper, req.body.conectividad, req.body.tipo, req.body.fabricante, req.body.imagen, req.body.precio, function () {
             res.render('exitoRegistro', { usuarioLogin : usuarioLogin });
         });
