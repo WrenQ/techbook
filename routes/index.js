@@ -42,6 +42,7 @@ module.exports = function (app) {
     app.get('/:orden', function (req, res) {
         if (req.params.orden === 'logoff') {
             usuario = undefined;
+            usuarioLogin = undefined;
             console.log('Me desconecto...');
             res.render('index', {usuario: usuario});
         } else if (req.params.orden === "pedidos") {
