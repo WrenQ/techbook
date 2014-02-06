@@ -48,7 +48,7 @@ module.exports = function (app) {
     });
 
     app.get('/pedidos', function (req, res) {
-        pedidoModel.getPedidos(usuarioLogin, function (err, results, articulosPedido) {
+        pedidoModel.getPedidos(usuarioLogin, function (err, results) {
             var articulosPedido;
             for(var i = 0; i < results.length; i++){
                 articuloModel.getArticuloByEan(p.ped_articulo, function (err, results, articulosPedido) {
