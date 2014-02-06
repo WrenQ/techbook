@@ -106,7 +106,7 @@ articuloModel.getArticuloByEan = function(cadena,callback)
 
 }
 
-articuloModel.setArticulo = function(ean, nombre, descripcion, pulgadas, procesador, resolucion, sistoper, conectividad, tipo, fabricante, imagen, pvp)
+articuloModel.setArticulo = function(ean, nombre, descripcion, pulgadas, procesador, resolucion, sistoper, conectividad, tipo, fabricante, imagen, pvp, callback)
 {
     client.query('INSERT INTO articulo VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12)', [ean, nombre, descripcion, pulgadas, procesador, resolucion, sistoper, conectividad, tipo, fabricante, imagen, pvp], function(error, results) {
         if(error){
