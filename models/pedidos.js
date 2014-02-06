@@ -14,7 +14,7 @@ var pedidoModel = {};
 
 //creamos un pedido
 pedidoModel.setPedido = function (loginUser, eanArticulo, callback) {
-    client.query('INSERT INTO pedido VALUES($1,$)', [loginUser, eanArticulo], function (error, results) {
+    client.query('INSERT INTO pedido VALUES($1,$2)', [loginUser, eanArticulo], function (error, results) {
         if (error) {
             console.log(error);
         } else {
