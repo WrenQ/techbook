@@ -351,14 +351,27 @@ html[xmlns] #nav {
 }
 
 #registrar {
-   background: orange;
-   border-radius: 2em;
-   -webkit-border-radius: 2em;   /* para Chrome */
-   -moz-border-radius: 2em;   /* para Mozilla */
-
-   -webkit-box-shadow: 0 1px 3px rgba(0,0,0, .4);   /* para Chrome */
-   -moz-box-shadow: 0 1px 3px rgba(0,0,0, .4);   /* para Mozilla */
+    padding: 20 20 20 20;   /* margen con valores: arriba - derecha - abajo - izquierda */ 
+    margin-top: 20%;
+    padding-top:10%;
+    padding-bottom:10%;
+    font-family:verdana,arial; 
+    font-size:9pt; 
+    background: orange;
+   -webkit-border-radius: 1.6em;   /* para Chrome */
+   -moz-border-radius: 1.6em;   /* para Mozilla */ 
 }
+
+.campos {  
+   margin-left: 20%;
+   margin-top: 1%;
+   margin-bottom: 1%;
+    font-family:verdana,arial;     /* tipo de letra */  
+    width: 50%;                 /* anchura de campos de formulario */  
+    font-size:8pt;                /* tamaño de la letra*/ 
+    -webkit-border-radius: 1.6em;   /* para Chrome */
+   -moz-border-radius: 1.6em;   /* para Mozilla */  
+}  
 
 .catalogo #imagenCabecera img {
    float: center;
