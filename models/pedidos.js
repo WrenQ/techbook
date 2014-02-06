@@ -3,43 +3,36 @@ var pg = require('pg'),
     client = new pg.Client(conString);
 //Nos conectamos a la Base de Datos
 client.connect();
-client.query('set schema \'techbook\'', function(err, rows) {
-    if(err){
+client.query('set schema \'techbook\'', function (err, rows) {
+    if (err) {
         console.log(err);
     }
 });
- 
+
 //creamos un objeto para ir almacenando todo lo que necesitemos
 var pedidoModel = {};
- 
+
 //creamos un pedido
-pedidoModel.setPedido = function(loginUser, eanArticulo, cant, importe, fecha, callback)
-{
-    client.query('INSERT INTO pedido VALUES($1,$2,$3,$4,$5)', [loginUser, eanArticulo, cant, importe, fecha], function(error, results) {
-        if(error){
+pedidoModel.setPedido = function (loginUser, eanArticulo, cant, importe, fecha, callback) {
+    client.query('INSERT INTO pedido VALUES($1,$2,$3,$4,$5)', [loginUser, eanArticulo, cant, importe, fecha], function (error, results) {
+        if (error) {
             console.log(error);
         } else {
             callback(null, results.rows);
         }
     });
-}
+};
 
 //Obtenemos los pedidos de un usuario
-pedidoModel.getPedidos = function(loginUser,callback)
-{
-    
-    client.query('SELECT ped_codigo, art_nombre, ped_fecha, art_pvp FROM pedido, articulo WHERE ped_usuario = $1 AND ped_articulo = art_ean', [loginUser], function(error, results) {
-        if(error)
-        {
+pedidoModel.getPedidos = function (loginUser, callback) {
+    client.query('SELECT ped_codigo, art_nombre, ped_fecha, art_pvp FROM pedido, articulo WHERE ped_usuario = $1 AND ped_articulo = art_ean', [loginUser], function (error, results) {
+        if (error) {
             console.log(error);
-        }
-        else
-        {   
+        } else {
             callback(null, results.rows);
         }
     });
-    
-}
+};
 
 //exportamos el objeto para tenerlo disponible en la zona de rutas
 module.exports = pedidoModel;
