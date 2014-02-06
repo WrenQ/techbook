@@ -440,3 +440,19 @@ html[xmlns] #nav {
    background: white;
    color: orange;
 }
+
+
+#Exito {
+   font-family: 'trebuchet MS', sans-serif;
+   color: #FFFFFF;
+   background-color: #FF8000;
+   font-size: 15px;
+   font-weight: bold;
+   text-align: center;
+   letter-spacing: 1.6pt;
+   word-spacing: 0pt;
+   line-height: 2.3;
+   -webkit-border-radius: 1.6em;   /* para Chrome */
+   -moz-border-radius: 1.6em;   /* para Mozilla */
+
+}
