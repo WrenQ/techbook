@@ -378,7 +378,13 @@ html[xmlns] #nav {
 
  /* ////////////////////// FICHA TÉCNICA /////////////////////*/
  
-#enlaceCompra{
+
+#fotoLink img{
+   margin-left: -12.5%;
+}
+
+#fotoLink a{
+   margin-right: -20%;
    font-family: "Trebuchet MS";
    font-size: 1.3em;
    font-weight: bold;
@@ -387,6 +393,8 @@ html[xmlns] #nav {
    display: block;
    padding:  8px 20px;
    margin: 0;
+   background: orange;
+   color: white;
 
    -webkit-border-radius: 1.6em;   /* para Chrome */
    -moz-border-radius: 1.6em;   /* para Mozilla */
@@ -394,7 +402,7 @@ html[xmlns] #nav {
    text-shadow: 0 1px 1px rgba(0,0,0, .3);
 }
 
-#enlaceCompra :hover {
+#fotoLink a:hover {
    background: white;
    color: orange;
 }

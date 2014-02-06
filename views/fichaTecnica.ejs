@@ -1,6 +1,11 @@
 <% include top %>
 <div class="catalogo" >
-    <img src ="<%= art.art_imagen %>" id="imagenCabecera"></img>
+    <div id="fotoLink">
+        <img src ="<%= art.art_imagen %>" id="imagenCabecera"></img>
+        <% if (usuarioLogin != undefined) { %>
+        <a href="/compra/<%= art.art_ean %>" id="enlaceCompra" > Comprar: <%= art.art_pvp %> €</a>
+        <% } %>
+    </div>
     <table  cellspacing="0">
         <tr>
             <td>
