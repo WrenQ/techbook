@@ -50,7 +50,7 @@ module.exports = function (app) {
     app.get('/pedidos', function (req, res) {
         pedidoModel.getPedidos(usuarioLogin, function (err, results) {
             var articulosPedido, i = 0;
-            pedidoModel.forEach(function(p) {
+            results.forEach(function(p) {
                 articuloModel.getArticuloByEan(p.ped_articulo, function (err, results) {
                     articulosPedido[i] = results[0];
                     i++;console.log("\n"+i+"\n");
