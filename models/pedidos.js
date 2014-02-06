@@ -28,7 +28,7 @@ pedidoModel.setPedido = function(loginUser, eanArticulo, cant, importe, fecha, c
 pedidoModel.getPedidos = function(loginUser,callback)
 {
     
-    client.query('SELECT * FROM pedido, articulo WHERE ped_usuario = $1 AND ped_articulo = art_ean', [loginUser], function(error, results) {
+    client.query('SELECT * FROM pedido natural join articulo WHERE ped_usuario = $1', [loginUser], function(error, results) {
         if(error)
         {
             console.log(error);
