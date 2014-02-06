@@ -351,7 +351,7 @@ html[xmlns] #nav {
 }
 
 #registrar {
-    padding: 20 20 20 20;   /* margen con valores: arriba - derecha - abajo - izquierda */ 
+    /*padding: 20 20 20 20;   /* margen con valores: arriba - derecha - abajo - izquierda */ 
     margin-top: 20%;
     padding-top:10%;
     padding-bottom:10%;
