@@ -20,7 +20,7 @@
 				<td><%= p.ped_codigo %></td>
 				<td><%= p.ped_fecha %></td>
 				<td><% var artic;
-                 articulos.getArticuloByEan(p.ped_articulo,  function (err, results) {
+                 articulos.getArticuloByEan(p.ped_articulo,  function (err, artic, results) {
                     artic = results[0].art_nombre;
                 });%>
                 <%= artic %></td>
