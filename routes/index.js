@@ -38,7 +38,14 @@ module.exports = function (app) {
     app.get('/catalogo/:modelo', function (req, res) {
         var modelo = req.params.modelo;
         articuloModel.getArticulosCatalogo(modelo, function (err, results) {
-            res.render('fichaTecnica', {art: results[0], articulos: articuloModel});
+            res.render('fichaTecnica', {art: results[0], articulos: articuloModel, usuarioLogin: usuarioLogin});
+        });
+    });
+
+    app.get('/compra/:ean', function (req, res) {
+        var ean = req.params.ean;
+        pedidoModel.setPedido(usuarioLogin, ean, function () {
+            res.render('exitoRegistro');
         });
     });
 

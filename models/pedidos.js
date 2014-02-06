@@ -13,8 +13,8 @@ client.query('set schema \'techbook\'', function (err, rows) {
 var pedidoModel = {};
 
 //creamos un pedido
-pedidoModel.setPedido = function (loginUser, eanArticulo, cant, importe, fecha, callback) {
-    client.query('INSERT INTO pedido VALUES($1,$2,$3,$4,$5)', [loginUser, eanArticulo, cant, importe, fecha], function (error, results) {
+pedidoModel.setPedido = function (loginUser, eanArticulo, callback) {
+    client.query('INSERT INTO pedido VALUES($1,$2)', [loginUser, eanArticulo], function (error, results) {
         if (error) {
             console.log(error);
         } else {
