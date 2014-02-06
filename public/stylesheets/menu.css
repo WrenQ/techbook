@@ -442,10 +442,11 @@ html[xmlns] #nav {
 
 
 #Exito {
+   margin-top: 10%;
    font-family: 'trebuchet MS', sans-serif;
    color: #FFFFFF;
    background-color: #FF8000;
-   font-size: 15px;
+   font-size: 30px;
    font-weight: bold;
    text-align: center;
    letter-spacing: 1.6pt;
