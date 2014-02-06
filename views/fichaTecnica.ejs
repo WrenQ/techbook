@@ -1,0 +1,88 @@
+<% include top %>
+<div class="catalogo" >
+    <img src ="<%= a.art_imagen %>" width="100" height="100"></img>
+    <table  cellspacing="0">
+        <tr>
+            <td>
+                <%= art.art_nombre %>
+            </td>
+            <td >
+                <%= Especificaciones %>
+            </td>
+        </tr>
+        <tr>descripcion, pulgadas, procesador, resolucion, sistoper, conectividad, tipo, fabricante, imagen, pvp, callback
+            <td>
+                EAN
+            </td>
+            <td>
+                <%= art.art_ean %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Tipo
+            </td>
+            <td>
+                <%= art.art_tipo %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Descripción
+            </td>
+            <td>
+                <%= art.art_descripcion %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Tamaño
+            </td>
+            <td>
+                <%= art.art_pantalla %> pulgadas
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Resolución
+            </td>
+            <td>
+                <%= art.art_resolucion %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Procesador
+            </td>
+            <td>
+                <%= art.art_procesador %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Sistema Operativo
+            </td>
+            <td>
+                <%= art.art_sistoper %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Conectividad
+            </td>
+            <td>
+                <%= art.art_conectividad %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Fabricante
+            </td>
+            <td>
+                <%= art.art_fabricante %>
+            </td>
+        </tr> 
+    </table>
+    <a href="/compra/<%= art.art_ean %> > Comprar: <%= art.art_pvp %> </a>
+  </div>
+<% include bottom %>

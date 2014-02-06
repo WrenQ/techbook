@@ -38,7 +38,7 @@ module.exports = function (app) {
     app.get('/catalogo/:modelo', function (req, res) {
         var modelo = req.params.modelo;
         articuloModelo.getArticulosCatalogo(modelo, function (err, results) {
-            res.render('fichaTecnica', {art: results, articulos: articuloModel});
+            res.render('fichaTecnica', {art: results[0], articulos: articuloModel});
         });
     });
 
