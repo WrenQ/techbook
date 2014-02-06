@@ -9,5 +9,4 @@ browser.visit("http://techbook.herokuapp.com/", function () {
     browser.pressButton("Entrar", function () {
         assert.ok(browser.success);
     });
-    console.log("estoy en: " + browser.html());
 });
