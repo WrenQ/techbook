@@ -374,3 +374,27 @@ html[xmlns] #nav {
    border-radius: 4px;
    text-decoration: none;
 }
+
+
+ /* ////////////////////// FICHA TÉCNICA /////////////////////*/
+ 
+#enlaceCompra{
+   font-family: "Trebuchet MS";
+   font-size: 1.3em;
+   font-weight: bold;
+   color: #e7e5e5;
+   text-decoration: none;
+   display: block;
+   padding:  8px 20px;
+   margin: 0;
+
+   -webkit-border-radius: 1.6em;   /* para Chrome */
+   -moz-border-radius: 1.6em;   /* para Mozilla */
+   
+   text-shadow: 0 1px 1px rgba(0,0,0, .3);
+}
+
+#enlaceCompra :hover {
+   background: white;
+   color: orange;
+}
