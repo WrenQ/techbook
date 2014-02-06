@@ -106,5 +106,16 @@ articuloModel.getArticuloByEan = function(cadena,callback)
 
 }
 
+articuloModel.setArticulo = function(ean, nombre, descripcion, pulgadas, procesador, resolucion, sistoper, conectividad, tipo, fabricante, imagen, pvp)
+{
+    client.query('INSERT INTO articulo VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12)', [ean, nombre, descripcion, pulgadas, procesador, resolucion, sistoper, conectividad, tipo, fabricante, imagen, pvp], function(error, results) {
+        if(error){
+            console.log(error);
+        } else {
+            callback(null, results.rows);
+        }
+    });
+}
+
 //exportamos el objeto para tenerlo disponible en la zona de rutas
 module.exports = articuloModel;

@@ -48,6 +48,8 @@ module.exports = function (app) {
             pedidoModel.getPedidos(usuarioLogin, function (err, results) {
                 res.render('pedidosUsuario', { ped: results, title: "Pedidos de " + usuarioLogin, pedidos: pedidoModel, n: results.length});
             });
+        } else if (req.params.orden === "nuevoArticulo") {
+            res.render('altaArticulo', {usuario: usuario});
         }
     });
 
@@ -71,8 +73,14 @@ module.exports = function (app) {
     });
 
     app.post('/procesarRegistro', function (req, res) {
-    //Hay que controlar el caso en que ya haya un usuario con el mismo nombre de usuario o email
         usuarioModel.setUser(req.body.nombreUsuario, req.body.clave, req.body.nombre, req.body.apellidos, req.body.mail, req.body.direccion, function () {
+            res.render('exitoRegistro');
+        });
+    });
+
+    app.post('/procesarAltaArticulo', function (req, res) {
+        ean, nombre, descripcion, pulgadas, procesador, resolucion, sistoper, conectividad, tipo, fabricante, pvp
+        articuloModel.setUser(req.body.eanArticulo, req.body.nombreArticulo, req.body.descripcion, req.body.pulgadas, req.body.procesador, req.body.resolucion req.body.sistoper, req.body.conectividad, req.body.tipo, req.body.fabricante, req.body.imagen, req.body.precio, function () {
             res.render('exitoRegistro');
         });
     });

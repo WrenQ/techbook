@@ -1,0 +1,27 @@
+<% include top %>
+<h1> Formulario de Alta de Artículo </h1>
+<form action="/procesarAltaArticulo" method="post">
+	<input type="text" class="campos" name="eanArticulo" placeholder="EAN del artículo"><br>
+	<input type="text" class="campos" name="nombreArticulo" placeholder="Nombre del artículo"><br>
+    <input type="text" class="campos" name="descripcion" placeholder="Descripción del artículo"><br>
+    <p><b>Tipo de artículo:</b></p>
+    <input type="text" class="campos" name="tipo" value="tablet"> Tablet<br>
+    <input type="text" class="campos" name="tipo" value="smartphone"> Smartphone<br>
+    <input type="text" class="campos" name="tipo" value="smartTV"> Smart TV<br>
+    <input type="text" class="campos" name="precio" placeholder="PVP del artículo"><br>
+    <input type="text" class="campos" name="imagen" placeholder="Imagen del artículo"><br>
+    <input type="text" class="campos" name="conectividad" placeholder="Conectividad"><br>
+    <input type="text" class="campos" name="pulgadas" placeholder="Tamaño de la pantalla en pulgadas"><br>
+    <p><b>Resolución:</b></p>
+    <input type="text" class="campos" name="resolucion" value="720p"> 720p<br>
+    <input type="text" class="campos" name="resolucion" value="1080p"> 1080p<br>
+    <input type="text" class="campos" name="resolucion" value="4K"> 4K<br>
+    <p><b>Sistema operativo:</b></p>
+    <input type="text" class="campos" name="sistoper" value="Android"> Android<br>
+    <input type="text" class="campos" name="sistoper" value="windowsphone"> Windows Phone<br>
+    <input type="text" class="campos" name="sistoper" value="N/A"> N/A<br>
+    <input type="text" class="campos" name="procesador" placeholder="Procesador (si procede)"><br>
+    <input type="text" class="campos" name="fabricante" placeholder="Fabricante del artículo"><br>
+    <input type="submit" value="Alta">
+</form>
+<% include bottom %>
