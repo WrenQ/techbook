@@ -17,6 +17,6 @@
     "url": "https://github.com/WrenQ/techbook"
   },
   "engines": {
-    "node": "*"
+    "node": "latest"
   }
 }
