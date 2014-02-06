@@ -49,13 +49,13 @@ module.exports = function (app) {
 
     app.get('/pedidos', function (req, res) {
         pedidoModel.getPedidos(usuarioLogin, function (err, results) {
-            var articulosPedido, i = 0;
-            results.forEach(function(p) {
+            var articulosPedido;
+            for(var i = 0; i < results.length; i++){
                 articuloModel.getArticuloByEan(p.ped_articulo, function (err, results) {
                     articulosPedido[i] = results[0];
-                    i++;console.log("\n"+i+"\n");
+                    i++;
                 });
-            });
+            }            
             res.render('pedidosUsuario', { ped: results, title: "Pedidos de " + usuarioLogin, pedidos: pedidoModel, articulos: articulosPedido, n: results.length, user: usuarioLogin});
         });
     });
