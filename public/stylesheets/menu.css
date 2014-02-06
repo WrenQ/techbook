@@ -356,3 +356,7 @@ html[xmlns] #nav {
    text-decoration: none;
    font-style: bold;
 }
+
+#nav input[type="text"] {
+    width: 150px;
+}

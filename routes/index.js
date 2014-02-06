@@ -15,7 +15,7 @@ module.exports = function (app) {
     app.get('/tablets/:pulgadas', function (req, res) {
         var pulgadas = req.params.pulgadas;
         articuloModel.getTablets(pulgadas, function (err, results) {
-            res.render('catalogo', { art: results, title: "Tablets" + pulgadas + "\"", articulos: articuloModel, n: results.length });
+            res.render('catalogo', { art: results, title: "Tablets " + pulgadas + "\"", articulos: articuloModel, n: results.length });
         });
     });
 
