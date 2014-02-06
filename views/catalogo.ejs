@@ -18,9 +18,9 @@
 				<td><a id="enlaceArticulo" href="/catalogo/<%= a.art_nombre %>" target="_blank"><%= a.art_nombre %></a></td>
 				<td>
                 <% if (usuarioLogin != undefined) { %>
-                <a id="botonCompraCatalogo" href="/compra/<%= art.art_ean %>" > Comprar: <%= art.art_pvp %> €</a>
+                <a id="botonCompraCatalogo" href="/compra/<%= art.art_ean %>" > Comprar: <%= a.art_pvp %> €</a>
                 <% } else { %>
-                <%= art.art_pvp %> €
+                <%= a.art_pvp %> €
                 <% } %>
                 </td>
 			</tr>
