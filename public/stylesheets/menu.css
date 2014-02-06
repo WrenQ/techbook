@@ -377,10 +377,22 @@ html[xmlns] #nav {
 
 
  /* ////////////////////// FICHA TÉCNICA /////////////////////*/
-#fotolink li{
+
+#fotoLink {
    list-style: none;
    display: inline;
-   float: right;
+   float:left;
+}
+
+#fotoLink li{
+   list-style: none;
+   display: inline;
+   float: left
+}
+
+#fotoLink img {
+   max-width: 50%;
+   min-width: 20%;
 }
 
 #fotoLink li a{
