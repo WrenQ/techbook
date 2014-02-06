@@ -50,12 +50,12 @@ module.exports = function (app) {
     app.get('/pedidos', function (req, res) {
         pedidoModel.getPedidos(usuarioLogin, function (err, results) {
             var articulosPedido;
-            for(var i = 0; i < results.length; i++){
+            /*for(var i = 0; i < results.length; i++){console.log("Dentro del for, antes del articuloModel");
                 articuloModel.getArticuloByEan(p.ped_articulo, function (err, results) {
                     articulosPedido[i] = results[0];
                     i++;
                 });
-            }            
+            }      */      
             res.render('pedidosUsuario', { ped: results, title: "Pedidos de " + usuarioLogin, pedidos: pedidoModel, articulos: articulosPedido, n: results.length, user: usuarioLogin});
         });
     });
