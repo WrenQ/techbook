@@ -27,6 +27,13 @@ module.exports = function (app) {
         });
     });
 
+    app.get('/smartTV/:pulgadas', function (req, res) {
+        var pulgadas = req.params.pulgadas;
+        articuloModel.getTVs(pulgadas, function (err, results) {
+            res.render('catalogo', { art: results, title: "Smart TVs " + pulgadas + "\"", articulos: articuloModel, n: results.length});
+        });
+    });
+
     //Mostrar página emergente con el detalle del artículo (ficha técnica)
     app.get('/catalogo/:modelo', function (req, res) {
         var modelo = req.params.modelo;
