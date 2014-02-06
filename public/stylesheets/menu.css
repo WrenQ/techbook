@@ -360,7 +360,7 @@ html[xmlns] #nav {
    -moz-box-shadow: 0 1px 3px rgba(0,0,0, .4);   /* para Mozilla */
 }
 
-.catalogo #imagenCabecera {
+.catalogo #imagenCabecera img {
    float: center;
    width: 300px;
    border-image: orange 3px inset;
@@ -368,8 +368,9 @@ html[xmlns] #nav {
 }
 
 .catalogo #enlaceCompra a {
-   font-size: 2em;
+   font-size: 2.5em;
    color: orange;
    border: orange 2px solid;
    border-radius: 4px;
+   text-decoration: none;
 }

@@ -44,8 +44,10 @@ module.exports = function (app) {
 
     app.get('/compra/:ean', function (req, res) {
         var ean = req.params.ean;
-        pedidoModel.setPedido(usuarioLogin, ean, function () {
-            res.render('exitoRegistro');
+        articuloModel.getArticuloByEan(ean, function(err, results) {
+            pedidoModel.setPedido(usuarioLogin, ean, results[0].art_pvp, function () {
+                res.render('exitoRegistro');
+            });
         });
     });
 
