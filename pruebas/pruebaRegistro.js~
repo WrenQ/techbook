@@ -1,8 +1,8 @@
-require('should');
+var Browser = require("zombie");
+var assert = require("assert");
 
-describe("Prueba de condiciones para el registro", function (){
-    it("Contraseña con más de 5 caracteres", function(){
-       
-    });
+browser = new Browser({ debug: true });
 
+browser.visit("http://techbook.herokuapp.com/", function () {
+    browser.clickLink("Nuevo Usuario", function () {});
 });

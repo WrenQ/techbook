@@ -42,7 +42,7 @@
                  <input type="submit" id="login" value="Entrar" />
                  <label for="checkbox"><input type="checkbox" id="checkbox" />Recordar datos</label>
                </form>
-               <center><a href="/registro" id="nodecorLink">Nuevo Usuario</a></center>
+               <center><a href="/registro" id="nodecorLink">¿Nuevo Usuario?</a></center>
             </li>
          </ul>
       </li>
