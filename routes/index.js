@@ -51,8 +51,8 @@ module.exports = function (app) {
         pedidoModel.getPedidos(usuarioLogin, function (err, results) {
             var articulosPedido;
             for(var i = 0; i < results.length; i++){
-                articuloModel.getArticuloByEan(p.ped_articulo, function (err, results, articulosPedido) {
-                    articulosPedido[i] = results[0];
+                articuloModel.getArticuloByEan(results[i].ped_articulo, function (err, resultsArt, articulosPedido) {
+                    articulosPedido[i] = resultsArt[0];
                     i++;
                 });
             }
