@@ -44,11 +44,20 @@ module.exports = function (app) {
             usuario = undefined;
             console.log('Me desconecto...');
             res.render('index', {usuario: usuario});
-        } else if (req.params.orden === 'pedidos') {
-            pedidoModel.getPedidos(usuarioLogin, function (err, results) {
-                res.render('pedidosUsuario', { ped: results, title: "Pedidos de " + usuarioLogin, pedidos: pedidoModel, articulos: articuloModel, n: results.length, user: usuarioLogin});
-            });
         }
+    });
+
+    app.get('/pedidos', function (req, res) {
+        pedidoModel.getPedidos(usuarioLogin, function (err, results) {
+            var articulosPedido, i = 0;
+            pedidoModel.forEach(function(p) {
+                articuloModel.getArticuloByEan(p.ped_articulo, function (err, results) {
+                    articulosPedido[i] = results[0];
+                    i++;
+                });
+            });
+            res.render('pedidosUsuario', { ped: results, title: "Pedidos de " + usuarioLogin, pedidos: pedidoModel, articulos: articulosPedido, n: results.length, user: usuarioLogin});
+        });
     });
 
     app.post('/busqueda', function (req, res) {

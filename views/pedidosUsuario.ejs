@@ -15,18 +15,16 @@
                 Importe
             </td>
         </tr>
-        <% ped.forEach(function (p){ %>
+        <% var i = 0;
+            ped.forEach(function (p){%>
 			<tr>
 				<td><%= p.ped_codigo %></td>
 				<td><%= p.ped_fecha %></td>
-				<td><% var artic;
-                 articulos.getArticuloByEan(p.ped_articulo,  function (err, results) {
-                    artic = results[0].art_nombre;
-                });%>
-                <%= artic %></td>
+				<td><%= articulos[i].art_nombre %></td>
                 <td><%= p.ped_importe %></td>
 			</tr>
-		<% }); %>
+		<% i++; 
+        }); %>
 
        
     </table>
