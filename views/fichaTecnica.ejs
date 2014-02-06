@@ -1,9 +1,9 @@
 <% include top %>
 <div class="catalogo" >
-    <div id="fotoLink">
-        <img src ="<%= art.art_imagen %>" id="imagenCabecera"></img>
+    <ul id="fotoLink">
+        <li><img src ="<%= art.art_imagen %>" id="imagenCabecera"></img></li>
         <% if (usuarioLogin != undefined) { %>
-        <a href="/compra/<%= art.art_ean %>" id="enlaceCompra" > Comprar: <%= art.art_pvp %> €</a>
+        <li><a href="/compra/<%= art.art_ean %>" id="enlaceCompra" > Comprar: <%= art.art_pvp %> €</a></li>
         <% } %>
     </div>
     <table  cellspacing="0">
@@ -81,8 +81,5 @@
         </tr> 
     </table>
     <br>
-    <% if (usuarioLogin != undefined) { %>
-    <a href="/compra/<%= art.art_ean %>" id="enlaceCompra" > Comprar: <%= art.art_pvp %> €</a>
-    <% } %>
   </div>
 <% include bottom %>

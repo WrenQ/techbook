@@ -377,16 +377,13 @@ html[xmlns] #nav {
 
 
  /* ////////////////////// FICHA TÉCNICA /////////////////////*/
- 
-
-#fotoLink img{
-   margin-left: -12.5%;
+#fotolink li{
+   list-style: none;
 }
 
 #fotoLink a{
-   margin-right: -20%;
    font-family: "Trebuchet MS";
-   font-size: 1.3em;
+   font-size: 1.6em;
    font-weight: bold;
    color: #e7e5e5;
    text-decoration: none;
@@ -395,7 +392,7 @@ html[xmlns] #nav {
    margin: 0;
    background: orange;
    color: white;
-
+   text-align: center;
    -webkit-border-radius: 1.6em;   /* para Chrome */
    -moz-border-radius: 1.6em;   /* para Mozilla */
    
