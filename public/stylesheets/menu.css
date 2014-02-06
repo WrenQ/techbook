@@ -360,14 +360,14 @@ html[xmlns] #nav {
    -moz-box-shadow: 0 1px 3px rgba(0,0,0, .4);   /* para Mozilla */
 }
 
-#imagenCabecera {
+.catalogo #imagenCabecera {
    float: center;
    width: 300px;
    border-image: orange 3px inset;
    border-radius: 2px;
 }
 
-#enlaceCompra a {
+.catalogo #enlaceCompra a {
    font-size: 2em;
    color: orange;
    border: orange 2px solid;
