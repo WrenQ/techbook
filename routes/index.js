@@ -48,11 +48,10 @@ module.exports = function (app) {
     });
 
     app.get('/pedidos', function (req, res) {
-        console.log("Fuera de pedidoModel");
-        pedidoModel.getPedidos(usuarioLogin, function (err, results) {
-            var articulosPedido;console.log("Fuera del for");
-            for(var i = 0; i < results.length; i++){console.log("Dentro del for, antes del articuloModel");
-                articuloModel.getArticuloByEan(p.ped_articulo, function (err, results) {
+        pedidoModel.getPedidos(usuarioLogin, function (err, results, articulosPedido) {
+            var articulosPedido;
+            for(var i = 0; i < results.length; i++){
+                articuloModel.getArticuloByEan(p.ped_articulo, function (err, results, articulosPedido) {
                     articulosPedido[i] = results[0];
                     i++;
                 });

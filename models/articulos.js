@@ -90,7 +90,7 @@ articuloModel.getMoviles = function(so,callback)
     });
 }
 
-articuloModel.getArticuloByEan = function(cadena,callback)
+articuloModel.getArticuloByEan = function(cadena,callback,articulosPedido)
 {
     
     client.query('SELECT * FROM articulo WHERE art_ean = $1', [cadena], function (error, results) {
@@ -100,7 +100,7 @@ articuloModel.getArticuloByEan = function(cadena,callback)
         }
         else
         {   
-            callback(null, results.rows);
+            callback(null, results.rows, articulosPedido);
         }
     });
 
