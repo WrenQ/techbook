@@ -56,7 +56,7 @@ module.exports = function (app) {
                     i++;
                 });
             }*/
-            res.render('pedidosUsuario', { ped: results, title: "Pedidos de " + usuarioLogin, n: results.length);
+            res.render('pedidosUsuario', { ped: results, title: "Pedidos de " + usuarioLogin, n: results.length});
         });
     });
 
