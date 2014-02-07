@@ -98,7 +98,7 @@ module.exports = function (app) {
     });
 
     app.post('/actualizarUsuario', function (req, res) {
-        usuarioModel.setUser(usuarioLogin, req.body.clave, req.body.nombre, req.body.apellidos, req.body.mail, req.body.direccion, function () {
+        usuarioModel.changeUser(usuarioLogin, req.body.clave, req.body.nombre, req.body.apellidos, req.body.mail, req.body.direccion, function () {
             res.render('exitoRegistro');
         });
     });
