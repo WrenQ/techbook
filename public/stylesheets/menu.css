@@ -352,7 +352,7 @@ html[xmlns] #nav {
 
 #registrar {
     width: 90%;
-    padding-top:10%;
+    padding-top:2%;
     padding-bottom:10%;
     font-family:verdana,arial; 
     font-size:9pt; 
@@ -361,16 +361,26 @@ html[xmlns] #nav {
    -moz-border-radius: 1.6em;   /* para Mozilla */ 
 }
 
-.campos {  
+.campos {
    margin-left: 20%;
-   margin-top: 1%;
    margin-bottom: 1%;
     font-family:verdana,arial;     /* tipo de letra */  
     width: 60%;                 /* anchura de campos de formulario */  
-    font-size:8pt;                /* tamaño de la letra*/ 
+    font-size:10pt;                /* tamaño de la letra*/ 
     -webkit-border-radius: 1.6em;   /* para Chrome */
    -moz-border-radius: 1.6em;   /* para Mozilla */  
 }  
+
+#registrar p{
+   color:white;
+   padding-top: -10%;
+   font-family: Arial, sans-serif;
+   font-size: 1.5em;
+}
+
+#botonRadio {
+   margin-left: 45%;
+}
 
 .catalogo #imagenCabecera img {
    float: center;

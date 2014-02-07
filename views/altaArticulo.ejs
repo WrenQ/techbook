@@ -1,27 +1,27 @@
 <% include top %>
 <h1 id="Exito"> Formulario de Alta de Artículo </h1>
 <form id ="registrar" action="/procesarAltaArticulo" method="post">
-	<input type="text" class="campos" name="eanArticulo" placeholder="EAN del artículo"><br>
-	<input type="text" class="campos" name="nombreArticulo" placeholder="Nombre del artículo"><br>
-    <input type="text" class="campos" name="descripcion" placeholder="Descripción del artículo"><br>
+	<input type="text" id="botonRadio" name="eanArticulo" placeholder="EAN del artículo"><br>
+	<input type="text" id="botonRadio" name="nombreArticulo" placeholder="Nombre del artículo"><br>
+    <input type="text" id="botonRadio" name="descripcion" placeholder="Descripción del artículo"><br>
     <p><b>Tipo de artículo:</b></p>
-    <input type="radio" class="campos" name="tipo" value="tablet"> Tablet<br>
-    <input type="radio" class="campos" name="tipo" value="smartphone"> Smartphone<br>
-    <input type="radio" class="campos" name="tipo" value="smartTV"> Smart TV<br>
-    <input type="text" class="campos" name="precio" placeholder="PVP del artículo"><br>
-    <input type="text" class="campos" name="imagen" placeholder="Imagen del artículo"><br>
-    <input type="text" class="campos" name="conectividad" placeholder="Conectividad"><br>
-    <input type="text" class="campos" name="pulgadas" placeholder="Tamaño de la pantalla en pulgadas"><br>
+    <input type="radio" id="botonRadio" name="tipo" value="tablet"> Tablet<br>
+    <input type="radio" id="botonRadio" name="tipo" value="smartphone"> Smartphone<br>
+    <input type="radio" id="botonRadio" name="tipo" value="smartTV"> Smart TV<br>
+    <input type="text" id="botonRadio" name="precio" placeholder="PVP del artículo"><br>
+    <input type="text" id="botonRadio" name="imagen" placeholder="Imagen del artículo"><br>
+    <input type="text" id="botonRadio" name="conectividad" placeholder="Conectividad"><br>
+    <input type="text" id="botonRadio" name="pulgadas" placeholder="Tamaño de la pantalla en pulgadas"><br>
     <p><b>Resolución:</b></p>
-    <input type="radio" class="campos" name="resolucion" value="720p"> 720p<br>
-    <input type="radio" class="campos" name="resolucion" value="1080p"> 1080p<br>
-    <input type="radio" class="campos" name="resolucion" value="4K"> 4K<br>
+    <input type="radio" id="botonRadio" name="resolucion" value="720p"> 720p<br>
+    <input type="radio" id="botonRadio" name="resolucion" value="1080p"> 1080p<br>
+    <input type="radio" id="botonRadio" name="resolucion" value="4K"> 4K<br>
     <p><b>Sistema operativo:</b></p>
-    <input type="radio" class="campos" name="sistoper" value="Android"> Android<br>
-    <input type="radio" class="campos" name="sistoper" value="windowsphone"> Windows Phone<br>
-    <input type="radio" class="campos" name="sistoper" value="N/A"> N/A<br>
-    <input type="text" class="campos" name="procesador" placeholder="Procesador (si procede)"><br>
-    <input type="text" class="campos" name="fabricante" placeholder="Fabricante del artículo"><br><br>
+    <input type="radio" id="botonRadio" name="sistoper" value="Android"> Android<br>
+    <input type="radio" id="botonRadio" name="sistoper" value="windowsphone"> Windows Phone<br>
+    <input type="radio" id="botonRadio" name="sistoper" value="N/A"> N/A<br>
+    <input type="text" id="botonRadio" name="procesador" placeholder="Procesador (si procede)"><br>
+    <input type="text" id="botonRadio" name="fabricante" placeholder="Fabricante del artículo"><br><br>
     <center><input type="submit" value="Alta">
 </form>
 <% include bottom %>

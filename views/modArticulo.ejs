@@ -1,63 +1,63 @@
 <% include top %>
 <h1 id="Exito"> Formulario de Alta de Artículo </h1>
 <form id ="registrar" action="/actualizarArticulo" method="post">
-    EAN: <input type="text" class="campos" name="eanArticulo" value="<%= art.art_ean %>"><br>
-	Nombre: <input type="text" class="campos" name="nombreArticulo" value="<%= art.art_nombre %>"><br>
-    Descripción: <input type="text" class="campos" name="descripcion" value="<%= art.art_descrip %>"><br>
-    <p><b>Tipo de artículo:</b></p>
+    <center><p>EAN</p></center><br><input type="text" class="campos" name="eanArticulo" value="<%= art.art_ean %>"><br>
+	<center><p>Nombre</p></center> <br><input type="text" class="campos" name="nombreArticulo" value="<%= art.art_nombre %>"><br>
+    <center><p>Descripción</p></center> <br><input type="text" class="campos" name="descripcion" value="<%= art.art_descrip %>"><br>
+    <center><p><b>Tipo de artículo:</b></p></center>
     <% if( art.art_tipo === "tablet") { %>
-    <input type="radio" class="campos" name="tipo" value="tablet" checked="checked"> Tablet<br>
+    <input type="radio"  id="botonRadio" name="tipo" value="tablet" checked="checked"> Tablet<br>
     <% } else { %>
-    <input type="radio" class="campos" name="tipo" value="tablet"> Tablet<br>
+    <input type="radio"  id="botonRadio" name="tipo" value="tablet"> Tablet<br>
     <% } %>
     <% if( art.art_tipo === "smartphone") { %>
-    <input type="radio" class="campos" name="tipo" value="smartphone" checked="checked"> Smartphone<br>
+    <input type="radio"  id="botonRadio" name="tipo" value="smartphone" checked="checked"> Smartphone<br>
     <% } else { %>
-    <input type="radio" class="campos" name="tipo" value="smartphone"> Smartphone<br>
+    <input type="radio"  id="botonRadio" name="tipo" value="smartphone"> Smartphone<br>
     <% } %>
     <% if( art.art_tipo === "smartTV") { %>
-    <input type="radio" class="campos" name="tipo" value="smartTV" checked="checked"> Smart TV<br>
+    <input type="radio"  id="botonRadio" name="tipo" value="smartTV" checked="checked"> Smart TV<br>
     <% } else { %>
-    <input type="radio" class="campos" name="tipo" value="smartTV"> Smart TV<br>
-    <% } %>
-    PVP: <input type="text" class="campos" name="precio" value="<%= art.art_pvp %>"><br>
-    Imagen: <input type="text" class="campos" name="imagen" value="<%= art.art_imagen %>"><br>
-    Conectividad: <input type="text" class="campos" name="conectividad" value="<%= art.art_conect %>"><br>
-    Pulgadas: <input type="text" class="campos" name="pulgadas" value="<%= art.art_pantalla %>"><br>
-    <p><b>Resolución:</b></p>
+    <input type="radio"  id="botonRadio" name="tipo" value="smartTV"> Smart TV<br>
+    <% } %><br>
+    <center><p>PVP</p></center><br><input type="text" class="campos" name="precio" value="<%= art.art_pvp %>"><br>
+    <center><p>Imagen</p></center><br> <input type="text" class="campos" name="imagen" value="<%= art.art_imagen %>"><br>
+    <center><p>Conectividad</p></center> <br><input type="text" class="campos" name="conectividad" value="<%= art.art_conect %>"><br>
+    <center><p>Pulgadas</p></center><br> <input type="text" class="campos" name="pulgadas" value="<%= art.art_pantalla %>"><br>
+    <center><p><b>Resolución:</b></p></center>
     <% if( art.art_resolucion === "720p") { %>
-    <input type="radio" class="campos" name="resolucion" value="720p" checked="checked"> 720p<br>
+    <input type="radio" id="botonRadio" name="resolucion" value="720p" checked="checked"> 720p<br>
     <% } else { %>
-    <input type="radio" class="campos" name="resolucion" value="720p"> 720p<br>
+    <input type="radio" id="botonRadio" name="resolucion" value="720p"> 720p<br>
     <% } %>
     <% if( art.art_resolucion === "1080p") { %>
-    <input type="radio" class="campos" name="resolucion" value="1080p" checked="checked"> 1080p<br>
+    <input type="radio" id="botonRadio" name="resolucion" value="1080p" checked="checked"> 1080p<br>
     <% } else { %>
-    <input type="radio" class="campos" name="resolucion" value="1080p"> 1080p<br>
+    <input type="radio" id="botonRadio" name="resolucion" value="1080p"> 1080p<br>
     <% } %>
     <% if( art.art_resolucion === "4K") { %>
-    <input type="radio" class="campos" name="resolucion" value="4K" checked="checked"> 4K<br>
+    <input type="radio" id="botonRadio" name="resolucion" value="4K" checked="checked"> 4K<br>
     <% } else { %>
-    <input type="radio" class="campos" name="resolucion" value="4K"> 4K<br>
-    <% } %>
-    <p><b>Sistema operativo:</b></p>
+    <input type="radio" id="botonRadio" name="resolucion" value="4K"> 4K<br>
+    <% } %><br>
+    <center><p><b>Sistema operativo:</b></p></center>
     <% if( art.art_sistoper === "Android") { %>
-    <input type="radio" class="campos" name="sistoper" value="Android" checked="checked"> Android<br>
+    <input type="radio" id="botonRadio" name="sistoper" value="Android" checked="checked"> Android<br>
     <% } else { %>
-    <input type="radio" class="campos" name="sistoper" value="Android"> Android<br>
+    <input type="radio" id="botonRadio" name="sistoper" value="Android"> Android<br>
     <% } %>
     <% if( art.art_sistoper === "windowsphone") { %>
-    <input type="radio" class="campos" name="sistoper" value="windowsphone" checked="checked"> Windows Phone<br>
+    <input type="radio" id="botonRadio" name="sistoper" value="windowsphone" checked="checked"> Windows Phone<br>
     <% } else { %>
-    <input type="radio" class="campos" name="sistoper" value="windowsphone"> Windows Phone<br>
+    <input type="radio" id="botonRadio" name="sistoper" value="windowsphone"> Windows Phone<br>
     <% } %>
     <% if( art.art_sistoper === "N/A") { %>
-    <input type="radio" class="campos" name="sistoper" value="N/A" checked="checked"> N/A<br>
+    <input type="radio" id="botonRadio" name="sistoper" value="N/A" checked="checked"> N/A<br>
     <% } else { %>
-    <input type="radio" class="campos" name="sistoper" value="N/A"> N/A<br>
-    <% } %>
-    Procesador: <input type="text" class="campos" name="procesador" value="<%= art.art_procesador %>"><br>
-    Fabricante: <input type="text" class="campos" name="fabricante" value="<%= art.art_fabric %>"><br><br>
+    <input type="radio" id="botonRadio" name="sistoper" value="N/A"> N/A<br>
+    <% } %><br>
+    <center><p>Procesador</p></center><br> <input type="text" class="campos" name="procesador" value="<%= art.art_procesador %>"><br>
+    <center><p>Fabricante</center><br> <input type="text" class="campos" name="fabricante" value="<%= art.art_fabric %>"><br><br>
     <center><input type="submit" value="Cambiar datos">
 </form>
 <% include bottom %>
