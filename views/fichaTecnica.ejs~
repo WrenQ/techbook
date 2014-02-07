@@ -5,7 +5,7 @@
         <% if (usuarioLogin === "admin") { %>
         <center><li><a href="/actualiza/<%= art.art_ean %>" name="comprar" id="enlaceCompra" > Cambiar datos (<%= art.art_pvp %> €)</a></li></center>
         <% } else if (usuarioLogin != undefined) {%>
-            <center><li><a href="/compra/<%= art.art_ean %>" name="comprar" id="enlaceCompra" > Comprar </a></li></center>
+            <center><li><a href="/compra/<%= art.art_ean %>" name="comprar" id="enlaceCompra" > Comprar: <%= art.art_pvp %> €</a></li></center>
         <% } %>
     </ul> <br>
     <table  cellspacing="0">

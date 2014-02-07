@@ -10,11 +10,7 @@
     "express": "3.4.8",
     "ejs": "*",
     "mysql": "*",
-    "pg": "latest",
-    "connect-flash": "*",
-    "passport": "*",
-    "passport-local": "*",
-    "sequelize": "*"
+    "pg": "latest"
   },
   "repository": {
     "type": "git",

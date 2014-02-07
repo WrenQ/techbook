@@ -35,14 +35,14 @@
          <ul>
             <li>
                <form id="login" method="post" action="/">
-                 <label for="nUsuario"> Usuario </label><br>
-                 <input type="text" name="nUsuario" id="nUsuario" /><br>
-                 <label for="clave"> Contraseña </label><br>
-                 <input type="password" name="clave" id="clave" maxlength="10"/><br>
+                 <label for="nUsuario"> Usuario </label>
+                 <input type="text" name="nUsuario" id="nUsuario" />
+                 <label for="clave"> Contraseña </label>
+                 <input type="password" name="clave" id="clave" maxlength="10"/>
                  <input type="submit" id="login" value="Entrar" />
                  <label for="checkbox"><input type="checkbox" id="checkbox" />Recordar datos</label>
                </form>
-               <center><a href="/registro" id="nodecorLink">Nuevo Usuario</a></center>
+               <center><a href="/registro" id="nodecorLink">¿Nuevo Usuario?</a></center>
             </li>
          </ul>
       </li>
@@ -50,7 +50,7 @@
        <li id="bienvenida">
              <a href="#"> <%= usuario %> </a> 
              <ul>
-              <li> <a href="/cuenta"> Mi cuenta </a> </li>
+              <li> <a href="#"> Mi cuenta </a> </li>
               <% if(usuarioLogin === "admin") { %>
               <li> <a href="/nuevoArticulo"> Nuevo artículo </a> </li>
               <% } else { %>

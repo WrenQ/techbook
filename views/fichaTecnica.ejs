@@ -2,9 +2,9 @@
 <div class="catalogo" >
     <ul id="fotoLink">
         <li><img src ="<%= art.art_imagen %>" id="imagenCabecera"></img></li>
-        <% if (user.login === "admin") { %>
+        <% if (usuarioLogin === "admin") { %>
         <center><li><a href="/actualiza/<%= art.art_ean %>" name="comprar" id="enlaceCompra" > Cambiar datos (<%= art.art_pvp %> €)</a></li></center>
-        <% } else if (user.login != undefined) {%>
+        <% } else if (usuarioLogin != undefined) {%>
             <center><li><a href="/compra/<%= art.art_ean %>" name="comprar" id="enlaceCompra" > Comprar </a></li></center>
         <% } %>
     </ul> <br>

@@ -29,7 +29,7 @@
             <li><a href="/smartTV/42">42"</a></li>
          </ul>
        </li>
-      <% if(user.login == undefined) { %>
+      <% if(usuario == undefined) { %>
       <li id="bienvenida">
         <a href="#">Login</a>
          <ul>
@@ -48,10 +48,10 @@
       </li>
       <% } else { %>
        <li id="bienvenida">
-             <a href="#"> <%= user.nombre %> </a> 
+             <a href="#"> <%= usuario %> </a> 
              <ul>
               <li> <a href="/cuenta"> Mi cuenta </a> </li>
-              <% if(user.login === "admin") { %>
+              <% if(usuarioLogin === "admin") { %>
               <li> <a href="/nuevoArticulo"> Nuevo artículo </a> </li>
               <% } else { %>
               <li> <a href="/pedidos"> Mis pedidos </a> </li>
