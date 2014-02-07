@@ -25,36 +25,36 @@
     <input type="text" class="campos" name="conectividad" value="<%= art.art_conect %>"><br>
     <input type="text" class="campos" name="pulgadas" value="<%= art.art_pantalla %>"><br>
     <p><b>Resolución:</b></p>
-    <% if( art.art_tipo === "720p") { %>
-    <input type="radio" class="campos" name="tipo" value="720p" checked="checked"> 720p<br>
+    <% if( art.art_resolucion === "720p") { %>
+    <input type="radio" class="campos" name="resolucion" value="720p" checked="checked"> 720p<br>
     <% } else { %>
-    <input type="radio" class="campos" name="tipo" value="720p"> 720p<br>
+    <input type="radio" class="campos" name="resolucion" value="720p"> 720p<br>
     <% } %>
-    <% if( art.art_tipo === "1080p") { %>
-    <input type="radio" class="campos" name="tipo" value="1080p" checked="checked"> 1080p<br>
+    <% if( art.art_resolucion === "1080p") { %>
+    <input type="radio" class="campos" name="resolucion" value="1080p" checked="checked"> 1080p<br>
     <% } else { %>
-    <input type="radio" class="campos" name="tipo" value="1080p"> 1080p<br>
+    <input type="radio" class="campos" name="resolucion" value="1080p"> 1080p<br>
     <% } %>
-    <% if( art.art_tipo === "4K") { %>
-    <input type="radio" class="campos" name="tipo" value="4K" checked="checked"> 4K<br>
+    <% if( art.art_resolucion === "4K") { %>
+    <input type="radio" class="campos" name="resolucion" value="4K" checked="checked"> 4K<br>
     <% } else { %>
-    <input type="radio" class="campos" name="tipo" value="4K"> 4K<br>
+    <input type="radio" class="campos" name="resolucion" value="4K"> 4K<br>
     <% } %>
     <p><b>Sistema operativo:</b></p>
-    <% if( art.art_tipo === "Android") { %>
-    <input type="radio" class="campos" name="tipo" value="Android" checked="checked"> Android<br>
+    <% if( art.art_sistoper === "Android") { %>
+    <input type="radio" class="campos" name="sistoper" value="Android" checked="checked"> Android<br>
     <% } else { %>
-    <input type="radio" class="campos" name="tipo" value="Android"> Android<br>
+    <input type="radio" class="campos" name="sistoper" value="Android"> Android<br>
     <% } %>
-    <% if( art.art_tipo === "windowsphone") { %>
-    <input type="radio" class="campos" name="tipo" value="windowsphone" checked="checked"> Windows Phone<br>
+    <% if( art.art_sistoper === "windowsphone") { %>
+    <input type="radio" class="campos" name="sistoper" value="windowsphone" checked="checked"> Windows Phone<br>
     <% } else { %>
-    <input type="radio" class="campos" name="tipo" value="windowsphone"> Windows Phone<br>
+    <input type="radio" class="campos" name="sistoper" value="windowsphone"> Windows Phone<br>
     <% } %>
-    <% if( art.art_tipo === "N/A") { %>
-    <input type="radio" class="campos" name="tipo" value="N/A" checked="checked"> N/A<br>
+    <% if( art.art_sistoper === "N/A") { %>
+    <input type="radio" class="campos" name="sistoper" value="N/A" checked="checked"> N/A<br>
     <% } else { %>
-    <input type="radio" class="campos" name="tipo" value="N/A"> N/A<br>
+    <input type="radio" class="campos" name="sistoper" value="N/A"> N/A<br>
     <% } %>
     <input type="text" class="campos" name="procesador" value="<%= art.art_procesador %>"><br>
     <input type="text" class="campos" name="fabricante" value="<%= art.art_fabric %>"><br>

@@ -117,7 +117,7 @@ module.exports = function (app) {
     });
 
     app.post('/actualizarArticulo', function (req, res) {
-        usuarioModel.changeArt(req.body.ean, req.body.clave, req.body.nombre, req.body.apellidos, req.body.mail, req.body.direccion, function () {
+        articuloModel.changeArt(req.body.eanArticulo, req.body.nombreArticulo, req.body.descripcion, req.body.pulgadas, req.body.procesador, req.body.resolucion, req.body.sistoper, req.body.conectividad, req.body.tipo, req.body.fabricante, req.body.imagen, req.body.precio, function () {
             res.render('exitoRegistro');
         });
     });
