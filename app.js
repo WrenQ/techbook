@@ -27,7 +27,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.favicon());
 app.use(express.logger('dev'));
-app.us(express.cookieParser());
+app.use(express.cookieParser());
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.bodyParser());
