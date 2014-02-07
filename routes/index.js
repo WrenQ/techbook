@@ -3,7 +3,7 @@
  */
 //Obtencion del modelo 'articulosModel' para emplear sus metodos
 var articuloModel = require('../models/articulos'), usuarioModel = require('../models/usuarios'), pedidoModel = require('../models/pedidos');
-    usuario = undefined, usuarioLogin = undefined;
+    //usuario = undefined, usuarioLogin = undefined;
 
 //Ruteo de la aplicación
 module.exports = function (app) {
@@ -38,14 +38,15 @@ module.exports = function (app) {
     app.get('/catalogo/:modelo', function (req, res) {
         var modelo = req.params.modelo;
         articuloModel.getArticulosCatalogo(modelo, function (err, results) {
-            res.render('fichaTecnica', {art: results[0], articulos: articuloModel, usuarioLogin: usuarioLogin, user: req.user ? req.user : undefined });
+            res.render('fichaTecnica', {art: results[0], articulos: articuloModel, user: req.user ? req.user : undefined });
         });
     });
 
     app.get('/compra/:ean', function (req, res) {
         var ean = req.params.ean;
-        pedidoModel.setPedido(usuarioLogin, ean, function () {
-            res.render('exitoRegistro', {user: req.user ? req.user : undefined} );
+        var user= req.user ? req.user : undefined;
+        pedidoModel.setPedido(user.login, ean, function () {
+            res.render('exitoRegistro', { user: user} );
         });
     });
 
@@ -61,19 +62,18 @@ module.exports = function (app) {
     });
 
     app.get('/:orden', function (req, res) {
+        var user= req.user ? req.user : undefined;
         if (req.params.orden === 'logoff') {
-            usuario = undefined;
-            usuarioLogin = undefined;
             console.log('Me desconecto...');
-            res.render('index', {usuario: usuario, user: req.user ? req.user : undefined });
+            res.render('index', {user: undefined });
         } else if (req.params.orden === "pedidos") {
-            pedidoModel.getPedidos(usuarioLogin, function (err, results) {
-                res.render('pedidosUsuario', { ped: results, title: "Pedidos de " + usuarioLogin, pedidos: pedidoModel, n: results.length, user: req.user ? req.user : undefined });
+            pedidoModel.getPedidos(user.login, function (err, results) {
+                res.render('pedidosUsuario', { ped: results, title: "Pedidos de " + user.login, pedidos: pedidoModel, n: results.length, user: req.user ? req.user : undefined });
             });
         } else if (req.params.orden === "nuevoArticulo") {
-            res.render('altaArticulo', {usuario: usuario, user: req.user ? req.user : undefined });
+            res.render('altaArticulo', {user: req.user ? req.user : undefined });
         } else if (req.params.orden === "cuenta") {
-            usuarioModel.getUserData(usuarioLogin, function (err, results) {
+            usuarioModel.getUserData(user.login, function (err, results) {
                 res.render('datosUsuario', {usr: results[0], user: req.user ? req.user : undefined });
             });
         }
@@ -89,9 +89,14 @@ module.exports = function (app) {
     app.post('/', function (req, res) {
         usuarioModel.getPass(req.body.nUsuario, req.body.clave, function (err, results) {
             if (results.length !== 0) {
-                usuario = results[0].usr_nombre;
-                usuarioLogin = results[0].usr_login;
-                res.render('index', { usuario : usuario , user: req.user ? req.user : undefined });
+                var user;
+                user.nombre = results[0].usr_nombre;
+                user.login = results[0].usr_login;
+                user.apell = results[0].usr_apell;
+                user.direccion = results[0].usr_direccion;
+                user.email = results[0].usr_emal;
+                user.pass = results[0].usr_pass;
+                res.render('index', { user: user });
             } else {
                 res.render('login', { texto: "Usuario o contraseña incorrectos.", title: "Inicio sesión", usuarios: usuarioModel , user: req.user ? req.user : undefined });
             }

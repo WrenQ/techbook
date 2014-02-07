@@ -47,7 +47,7 @@ seqConnectParams.query('set schema \'techbook\'', function (err, rows) {
 });
 
 users.configure({
-	users: usersModel,
+	users: usuarioModel,
 	passport: passport
 });
 
