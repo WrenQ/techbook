@@ -1,6 +1,7 @@
 var Browser = require("zombie");
+var assert = require("assert");
 
-var browser = new Browser({debug: true});
+browser = new Browser({debug: true});
 
 browser.visit("http://techbook.herokuapp.com/", function () {
     browser.fill("Usuario", "Zombie2");

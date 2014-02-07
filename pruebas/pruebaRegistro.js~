@@ -4,7 +4,6 @@ var assert = require("assert");
 browser = new Browser({ debug: true });
 
 browser.visit("http://techbook.herokuapp.com/registro", function () {
-    console.log("estoy en: " + browser.html());
     browser.fill("nombreUsuario", "Zombie2");
     browser.fill("clave", "cerebro");
     browser.fill("nombre", "Zombie2");
