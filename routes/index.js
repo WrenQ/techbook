@@ -87,7 +87,7 @@ module.exports = function (app) {
     });
 
     app.post('/', function (req, res) {
-        if(req.body.nUsuario.length !== 0) {
+        if(req.body.nUsuario.length !== 0 || req.body.clave.length !== 0) {
             usuarioModel.getPass(req.body.nUsuario, req.body.clave, function (err, results) {
                 usuario = results[0].usr_nombre;
                 usuarioLogin = results[0].usr_login;
@@ -98,7 +98,7 @@ module.exports = function (app) {
                 }
             });
         } else {
-            res.render('login', { texto: "No has indicado el nombre de usuario.", title: "Inicio sesión", usuarios: usuarioModel });
+            res.render('login', { texto: "No has indicado el nombre de usuario o la contraseña.", title: "Inicio sesión", usuarios: usuarioModel });
         }
     });
 
