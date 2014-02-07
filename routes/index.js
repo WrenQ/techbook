@@ -15,7 +15,7 @@ module.exports = function (app) {
     app.get('/tablets/:pulgadas', function (req, res) {
         var pulgadas = req.params.pulgadas;
         articuloModel.getTablets(pulgadas, function (err, results) {
-            res.render('catalogo', { art: results, title: "Tablets " + pulgadas + "\"", articulos: articuloModel, n: results.length, usuarioLogin: usuarioLogin});
+            res.render('catalogo', { art: results, title: "Tablets " + pulgadas + "\"", articulos: articuloModel, n: results.length });
         });
     });
 
@@ -23,14 +23,14 @@ module.exports = function (app) {
     app.get('/smartphones/:tipo', function (req, res) {
         var tipo = req.params.tipo;
         articuloModel.getMoviles(tipo, function (err, results) {
-            res.render('catalogo', { art: results, title: "Smartphones " + tipo, articulos: articuloModel, n: results.length, usuarioLogin: usuarioLogin});
+            res.render('catalogo', { art: results, title: "Smartphones " + tipo, articulos: articuloModel, n: results.length});
         });
     });
 
     app.get('/smartTV/:pulgadas', function (req, res) {
         var pulgadas = req.params.pulgadas;
         articuloModel.getTVs(pulgadas, function (err, results) {
-            res.render('catalogo', { art: results, title: "Smart TVs " + pulgadas + "\"", articulos: articuloModel, n: results.length, usuarioLogin: usuarioLogin});
+            res.render('catalogo', { art: results, title: "Smart TVs " + pulgadas + "\"", articulos: articuloModel, n: results.length});
         });
     });
 
@@ -117,7 +117,7 @@ module.exports = function (app) {
     });
 
     app.post('/actualizarArticulo', function (req, res) {
-        usuarioModel.changeArt(req.body.eanArticulo, req.body.nombreArticulo, req.body.descripcion, req.body.pulgadas, req.body.procesador, req.body.resolucion, req.body.sistoper, req.body.conectividad, req.body.tipo, req.body.fabricante, req.body.imagen, req.body.precio, function () {
+        usuarioModel.changeArt(req.body.ean, req.body.clave, req.body.nombre, req.body.apellidos, req.body.mail, req.body.direccion, function () {
             res.render('exitoRegistro');
         });
     });
