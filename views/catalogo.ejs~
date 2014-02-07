@@ -17,9 +17,9 @@
 				<td id="celdaImagen"><img src ="<%= a.art_imagen %>" width="100" height="100"></img></td>
 				<td><a id="enlaceArticulo" href="/catalogo/<%= a.art_nombre %>" target="_blank"><%= a.art_nombre %></a></td>
 				<td>
-                <% if (user.login === "admin") { %>
+                <% if (usuarioLogin === "admin") { %>
                 <a id="botonCompraCatalogo" href="/actualiza/<%= a.art_ean %>" > Cambiar datos (<%= a.art_pvp %> €)</a>
-                <% } else if (user.login != undefined) { %>
+                <% } else if (usuarioLogin != undefined) { %>
                 <a id="botonCompraCatalogo" href="/compra/<%= a.art_ean %>" > Comprar: <%= a.art_pvp %> €</a>
                 <% } else { %>
                 <%= a.art_pvp %> €
