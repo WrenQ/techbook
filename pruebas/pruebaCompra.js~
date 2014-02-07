@@ -9,7 +9,7 @@ browser.visit("http://techbook.herokuapp.com/", function () {
     browser.pressButton("Entrar", function () {
         browser.clickLink("Android", function () {
             browser.visit("http://techbook.herokuapp.com/catalogo/Galaxy%20Note%20III", function () {
-                browser.clickLink("Comprar", function () {});
+                browser.clickLink("comprar", function () {});
             });
         });
     });
