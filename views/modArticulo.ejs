@@ -1,9 +1,9 @@
 <% include top %>
 <h1> Formulario de Alta de Artículo </h1>
 <form id ="registrar" action="/actualizarArticulo" method="post">
-    <input type="text" class="campos" name="eanArticulo" value="<%= art.art_ean %>"><br>
-	<input type="text" class="campos" name="nombreArticulo" value="<%= art.art_nombre %>"><br>
-    <input type="text" class="campos" name="descripcion" value="<%= art.art_descrip %>"><br>
+    EAN: <input type="text" class="campos" name="eanArticulo" value="<%= art.art_ean %>"><br>
+	Nombre: <input type="text" class="campos" name="nombreArticulo" value="<%= art.art_nombre %>"><br>
+    Descripción: <input type="text" class="campos" name="descripcion" value="<%= art.art_descrip %>"><br>
     <p><b>Tipo de artículo:</b></p>
     <% if( art.art_tipo === "tablet") { %>
     <input type="radio" class="campos" name="tipo" value="tablet" checked="checked"> Tablet<br>
@@ -20,10 +20,10 @@
     <% } else { %>
     <input type="radio" class="campos" name="tipo" value="smartTV"> Smart TV<br>
     <% } %>
-    <input type="text" class="campos" name="precio" value="<%= art.art_precio %>"><br>
-    <input type="text" class="campos" name="imagen" value="<%= art.art_imagen %>"><br>
-    <input type="text" class="campos" name="conectividad" value="<%= art.art_conect %>"><br>
-    <input type="text" class="campos" name="pulgadas" value="<%= art.art_pantalla %>"><br>
+    PVP: <input type="text" class="campos" name="precio" value="<%= art.art_pvp %>"><br>
+    Imagen: <input type="text" class="campos" name="imagen" value="<%= art.art_imagen %>"><br>
+    Conectividad: <input type="text" class="campos" name="conectividad" value="<%= art.art_conect %>"><br>
+    Pulgadas: <input type="text" class="campos" name="pulgadas" value="<%= art.art_pantalla %>"><br>
     <p><b>Resolución:</b></p>
     <% if( art.art_resolucion === "720p") { %>
     <input type="radio" class="campos" name="resolucion" value="720p" checked="checked"> 720p<br>
@@ -56,8 +56,8 @@
     <% } else { %>
     <input type="radio" class="campos" name="sistoper" value="N/A"> N/A<br>
     <% } %>
-    <input type="text" class="campos" name="procesador" value="<%= art.art_procesador %>"><br>
-    <input type="text" class="campos" name="fabricante" value="<%= art.art_fabric %>"><br>
+    Procesador: <input type="text" class="campos" name="procesador" value="<%= art.art_procesador %>"><br>
+    Fabricante: <input type="text" class="campos" name="fabricante" value="<%= art.art_fabric %>"><br>
     <input type="submit" value="Cambiar datos">
 </form>
 <% include bottom %>

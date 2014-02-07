@@ -1,11 +1,11 @@
 <% include top %>
 <h1> Datos de <%= usr.usr_login %> </h1>
 <form id="registrar" action="/actualizarUsuario" method="post">
-    <input type="password" class="campos" name="clave" value="<%= usr.usr_pass %>"><br>
-    <input type="text" class="campos" name="nombre" value="<%= usr.usr_nombre %>"><br>
-    <input type="text" class="campos" name="apellidos" value="<%= usr.usr_apell %>"><br>
-    <input type="text" class="campos" name="mail" value="<%= usr.usr_emal %>"><br>
-    <input type="text" class="campos" name="direccion" value="<%= usr.usr_direccion %>"><br>
+    Contraseña: <input type="password" class="campos" name="clave" value="<%= usr.usr_pass %>"><br>
+    Nombre: <input type="text" class="campos" name="nombre" value="<%= usr.usr_nombre %>"><br>
+    Apellidos: <input type="text" class="campos" name="apellidos" value="<%= usr.usr_apell %>"><br>
+    Email: <input type="text" class="campos" name="mail" value="<%= usr.usr_emal %>"><br>
+    Dirección: <input type="text" class="campos" name="direccion" value="<%= usr.usr_direccion %>"><br>
     <input type="submit" value="Cambiar datos">
 </form>
 <% include bottom %>
