@@ -46,7 +46,7 @@ usuarioModel.setUser = function (login, pass, nombre, apell, mail, direccion, ca
 };
 
 usuarioModel.changeUser = function (login, pass, nombre, apell, mail, direccion, callback) {
-    client.query('UPDATE usuario SET usr_pass = $1, usr_nombre = $2, usr_apell = $3, usr_email = $4, usr_direccion = $5, WHERE usr_login = $6', [pass, nombre, apell, mail, direccion, login], function (error, results) {
+    client.query('UPDATE usuario SET usr_pass = $1, usr_nombre = $2, usr_apell = $3, usr_emal = $4, usr_direccion = $5, WHERE usr_login = $6', [pass, nombre, apell, mail, direccion, login], function (error, results) {
         if (error) {
             console.log(error);
         } else {
