@@ -88,7 +88,7 @@ module.exports = function (app) {
 
     app.post('/', function (req, res) {
         //if(req.body.nUsuario.length !== 0 && req.body.clave.length !== 0) {
-        //    usuarioModel.getPass(req.body.nUsuario, req.body.clave, function (err, results) {
+            usuarioModel.getPass(req.body.nUsuario, req.body.clave, function (err, results) {
                 if (results.length !== 0) {
                     usuario = results[0].usr_nombre;
                     usuarioLogin = results[0].usr_login;
