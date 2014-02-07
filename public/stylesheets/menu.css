@@ -351,8 +351,7 @@ html[xmlns] #nav {
 }
 
 #registrar {
-    /*padding: 20 20 20 20;   /* margen con valores: arriba - derecha - abajo - izquierda */ 
-    margin-top: 20%;
+    width: 90%;
     padding-top:10%;
     padding-bottom:10%;
     font-family:verdana,arial; 
@@ -367,7 +366,7 @@ html[xmlns] #nav {
    margin-top: 1%;
    margin-bottom: 1%;
     font-family:verdana,arial;     /* tipo de letra */  
-    width: 50%;                 /* anchura de campos de formulario */  
+    width: 60%;                 /* anchura de campos de formulario */  
     font-size:8pt;                /* tamaño de la letra*/ 
     -webkit-border-radius: 1.6em;   /* para Chrome */
    -moz-border-radius: 1.6em;   /* para Mozilla */  

@@ -1,5 +1,5 @@
 <% include top %>
-<h1> Formulario de Alta de Artículo </h1>
+<h1 id="Exito"> Formulario de Alta de Artículo </h1>
 <form id ="registrar" action="/actualizarArticulo" method="post">
     EAN: <input type="text" class="campos" name="eanArticulo" value="<%= art.art_ean %>"><br>
 	Nombre: <input type="text" class="campos" name="nombreArticulo" value="<%= art.art_nombre %>"><br>
@@ -57,7 +57,7 @@
     <input type="radio" class="campos" name="sistoper" value="N/A"> N/A<br>
     <% } %>
     Procesador: <input type="text" class="campos" name="procesador" value="<%= art.art_procesador %>"><br>
-    Fabricante: <input type="text" class="campos" name="fabricante" value="<%= art.art_fabric %>"><br>
-    <input type="submit" value="Cambiar datos">
+    Fabricante: <input type="text" class="campos" name="fabricante" value="<%= art.art_fabric %>"><br><br>
+    <center><input type="submit" value="Cambiar datos">
 </form>
 <% include bottom %>
