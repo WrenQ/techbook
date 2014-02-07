@@ -65,6 +65,10 @@ module.exports = function (app) {
             });
         } else if (req.params.orden === "nuevoArticulo") {
             res.render('altaArticulo', {usuario: usuario});
+        } else if (req.params.orden === "cuenta") {
+            usuarioModel.getUserData(usuarioLogin, function (err, results) {
+                res.render('datosUsuario', {usr: results[0]});
+            });
         }
     });
 
@@ -89,6 +93,12 @@ module.exports = function (app) {
 
     app.post('/procesarRegistro', function (req, res) {
         usuarioModel.setUser(req.body.nombreUsuario, req.body.clave, req.body.nombre, req.body.apellidos, req.body.mail, req.body.direccion, function () {
+            res.render('exitoRegistro');
+        });
+    });
+
+    app.post('/actualizarUsuario', function (req, res) {
+        usuarioModel.setUser(usuarioLogin, req.body.clave, req.body.nombre, req.body.apellidos, req.body.mail, req.body.direccion, function () {
             res.render('exitoRegistro');
         });
     });
