@@ -13,8 +13,8 @@
     "pg": "latest",
     "connect-flash": "*",
     "passport": "*",
-    "passport-local": "*"
-
+    "passport-local": "*",
+    "sequelize": "*"
   },
   "repository": {
     "type": "git",
