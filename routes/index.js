@@ -15,7 +15,7 @@ module.exports = function (app) {
     app.get('/tablets/:pulgadas', function (req, res) {
         var pulgadas = req.params.pulgadas;
         articuloModel.getTablets(pulgadas, function (err, results) {
-            res.render('catalogo', { art: results, title: "Tablets " + pulgadas + "\"", articulos: articuloModel, n: results.length });
+            res.render('catalogo', { art: results, title: "Tablets " + pulgadas + "\"", articulos: articuloModel, n: results.length, usuarioLogin: usuarioLogin});
         });
     });
 
@@ -23,14 +23,14 @@ module.exports = function (app) {
     app.get('/smartphones/:tipo', function (req, res) {
         var tipo = req.params.tipo;
         articuloModel.getMoviles(tipo, function (err, results) {
-            res.render('catalogo', { art: results, title: "Smartphones " + tipo, articulos: articuloModel, n: results.length});
+            res.render('catalogo', { art: results, title: "Smartphones " + tipo, articulos: articuloModel, n: results.length, usuarioLogin: usuarioLogin});
         });
     });
 
     app.get('/smartTV/:pulgadas', function (req, res) {
         var pulgadas = req.params.pulgadas;
         articuloModel.getTVs(pulgadas, function (err, results) {
-            res.render('catalogo', { art: results, title: "Smart TVs " + pulgadas + "\"", articulos: articuloModel, n: results.length});
+            res.render('catalogo', { art: results, title: "Smart TVs " + pulgadas + "\"", articulos: articuloModel, n: results.length, usuarioLogin: usuarioLogin});
         });
     });
 

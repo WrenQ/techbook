@@ -4,7 +4,7 @@
         <li><img src ="<%= art.art_imagen %>" id="imagenCabecera"></img></li>
         <% if (usuarioLogin != undefined) { %>
         <center><li><a href="/compra/<%= art.art_ean %>" name="comprar" id="enlaceCompra" > Comprar: <%= art.art_pvp %> €</a></li>
-        <% } else if (usuarioLogin == "admin") {%>
+        <% } else if (usuarioLogin === "admin") {%>
             <center><li><a href="/actualiza/<%= art.art_ean %>" name="comprar" id="enlaceCompra" > Cambiar datos (<%= art.art_pvp %> €)</a></li>
         <% } %>
     </ul> <br>
