@@ -88,5 +88,15 @@ articuloModel.setArticulo = function (ean, nombre, descripcion, pulgadas, proces
     });
 };
 
+articuloModel.changeArt = function (ean, nombre, descripcion, pulgadas, procesador, resolucion, sistoper, conectividad, tipo, fabricante, imagen, pvp, callback) {
+    client.query('UPDATE articulo SET art_nombre = $1, art_descrip = $2, art_pantalla = $3, art_procesador = $4, art_resolucion = $5, art_sistoper = $6, art_conect = $7, art_tipo = $8, art_fabric = $9, art_imagen = $10, art_pvp = $11 WHERE art_ean = $12', [nombre, descripcion, pulgadas, procesador, resolucion, sistoper, conectividad, tipo, fabricante, imagen, pvp, ean], function (error, results) {
+        if (error) {
+            console.log(error);
+        } else {
+            callback(null, results.rows);
+        }
+    });
+};
+
 //exportamos el objeto para tenerlo disponible en la zona de rutas
 module.exports = articuloModel;

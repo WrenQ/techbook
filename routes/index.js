@@ -49,6 +49,13 @@ module.exports = function (app) {
         });
     });
 
+    app.get('/actualiza/:ean', function (req, res) {
+        var ean = req.params.ean;
+        articuloModel.getArticuloByEan(ean, function (err, results) {
+            res.render('modArticulo', {art: results[0]});
+        });
+    });
+
     app.get('/registro', function (req, res) {
         res.render('registro');
     });
@@ -106,6 +113,12 @@ module.exports = function (app) {
     app.post('/procesarAltaArticulo', function (req, res) {
         articuloModel.setArticulo(req.body.eanArticulo, req.body.nombreArticulo, req.body.descripcion, req.body.pulgadas, req.body.procesador, req.body.resolucion, req.body.sistoper, req.body.conectividad, req.body.tipo, req.body.fabricante, req.body.imagen, req.body.precio, function () {
             res.render('exitoRegistro', { usuarioLogin : usuarioLogin });
+        });
+    });
+
+    app.post('/actualizarArticulo', function (req, res) {
+        usuarioModel.changeArt(req.body.eanArticulo, req.body.nombreArticulo, req.body.descripcion, req.body.pulgadas, req.body.procesador, req.body.resolucion, req.body.sistoper, req.body.conectividad, req.body.tipo, req.body.fabricante, req.body.imagen, req.body.precio, function () {
+            res.render('exitoRegistro');
         });
     });
 };

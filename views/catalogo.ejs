@@ -19,6 +19,8 @@
 				<td>
                 <% if (usuarioLogin != undefined) { %>
                 <a id="botonCompraCatalogo" href="/compra/<%= a.art_ean %>" > Comprar: <%= a.art_pvp %> €</a>
+                <% } else if (usuarioLogin === "admin") { %>
+                <a id="botonCompraCatalogo" href="/actualiza/<%= a.art_ean %>" > Cambiar datos (<%= a.art_pvp %> €)</a>
                 <% } else { %>
                 <%= a.art_pvp %> €
                 <% } %>
