@@ -11,7 +11,7 @@ var usuarioLogin;
 //Ruteo de la aplicación
 module.exports = function (app) {
     app.get('/', function (req, res) {
-        res.render('index', {usuario: usuario});
+        res.render('index', {usuario: usuario, usuarioLogin: usuarioLogin});
     });
 
 //mostrar tablets
