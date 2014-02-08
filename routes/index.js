@@ -103,25 +103,25 @@ module.exports = function (app) {
 
     app.post('/procesarRegistro', function (req, res) {
         usuarioModel.setUser(req.body.nombreUsuario, req.body.clave, req.body.nombre, req.body.apellidos, req.body.mail, req.body.direccion, function () {
-            res.render('exitoRegistro');
+            res.render('exitoRegistro', {usuario: usuario, usuarioLogin: usuarioLogin});
         });
     });
 
     app.post('/actualizarUsuario', function (req, res) {
         usuarioModel.changeUser(usuarioLogin, req.body.clave, req.body.nombre, req.body.apellidos, req.body.mail, req.body.direccion, function () {
-            res.render('exitoRegistro');
+            res.render('exitoRegistro', {usuario: usuario, usuarioLogin: usuarioLogin});
         });
     });
 
     app.post('/procesarAltaArticulo', function (req, res) {
         articuloModel.setArticulo(req.body.eanArticulo, req.body.nombreArticulo, req.body.descripcion, req.body.pulgadas, req.body.procesador, req.body.resolucion, req.body.sistoper, req.body.conectividad, req.body.tipo, req.body.fabricante, req.body.imagen, req.body.precio, function () {
-            res.render('exitoRegistro', { usuarioLogin : usuarioLogin });
+            res.render('exitoRegistro', {usuario: usuario, usuarioLogin: usuarioLogin});
         });
     });
 
     app.post('/actualizarArticulo', function (req, res) {
         articuloModel.changeArt(req.body.eanArticulo, req.body.nombreArticulo, req.body.descripcion, req.body.pulgadas, req.body.procesador, req.body.resolucion, req.body.sistoper, req.body.conectividad, req.body.tipo, req.body.fabricante, req.body.imagen, req.body.precio, function () {
-            res.render('exitoRegistro');
+            res.render('exitoRegistro', {usuario: usuario, usuarioLogin: usuarioLogin});
         });
     });
 };

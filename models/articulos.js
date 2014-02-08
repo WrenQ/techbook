@@ -12,28 +12,29 @@ client.query('set schema \'techbook\'', function (err, rows) {
 //creamos un objeto para ir almacenando todo lo que necesitemos
 var articuloModel = {};
 
-//obtenemos un articulo por su tipo
-articuloModel.getTablets = function (pulgadas, callback) {
-
-    client.query('SELECT * FROM articulo WHERE art_tipo = \'tablet\' AND art_pantalla = $1', [pulgadas], function (error, results) {
+function getArtTipo(tipo, tipoPropiedad, propiedad, callback) {
+    client.query('SELECT * FROM articulo WHERE art_tipo = $1 AND art_' + tipoPropiedad + ' = $2', [tipo, propiedad], function (error, results) {
         if (error) {
             console.log(error);
         } else {
             callback(null, results.rows);
         }
     });
+}
+
+//obtenemos un articulo por su tipo
+articuloModel.getTablets = function (pulgadas, callback) {
+    getArtTipo('tablet', 'pantalla', pulgadas, callback);
 };
 
 articuloModel.getTVs = function (pulgadas, callback) {
-
-    client.query('SELECT * FROM articulo WHERE art_tipo = \'smartTV\' AND art_pantalla = $1', [pulgadas], function (error, results) {
-        if (error) {
-            console.log(error);
-        } else {
-            callback(null, results.rows);
-        }
-    });
+    getArtTipo('smartTV', 'pantalla', pulgadas, callback);
 };
+
+articuloModel.getMoviles = function (so, callback) {
+    getArtTipo('smartphone', 'sistoper', so, callback);
+};
+
 
 //Búsqueda de artículos en general
 articuloModel.getArticulos = function (cadena, callback) {
@@ -47,35 +48,24 @@ articuloModel.getArticulos = function (cadena, callback) {
         });
 };
 
+
+function getArticuloGeneral(tipoPropiedad, cadena, callback) {
+    client.query('SELECT * FROM articulo WHERE art_' + tipoPropiedad + ' = $1', [cadena], function (error, results) {
+        if (error) {
+            console.log(error);
+        } else {
+            callback(null, results.rows);
+        }
+    });
+}
+
 //Búsqueda de artículos por nombre
 articuloModel.getArticulosCatalogo = function (cadena, callback) {
-    client.query('SELECT * FROM articulo WHERE art_nombre = $1', [cadena], function (error, results) {
-        if (error) {
-            console.log(error);
-        } else {
-            callback(null, results.rows);
-        }
-    });
-};
-
-articuloModel.getMoviles = function (so, callback) {
-    client.query('SELECT * FROM articulo WHERE art_tipo = \'smartphone\' AND art_sistoper = $1', [so], function (error, results) {
-        if (error) {
-            console.log(error);
-        } else {
-            callback(null, results.rows);
-        }
-    });
+    getArticuloGeneral('nombre', cadena, callback);
 };
 
 articuloModel.getArticuloByEan = function (cadena, callback) {
-    client.query('SELECT * FROM articulo WHERE art_ean = $1', [cadena], function (error, results) {
-        if (error) {
-            console.log(error);
-        } else {
-            callback(null, results.rows);
-        }
-    });
+    getArticuloGeneral('ean', cadena, callback);
 };
 
 articuloModel.setArticulo = function (ean, nombre, descripcion, pulgadas, procesador, resolucion, sistoper, conectividad, tipo, fabricante, imagen, pvp, callback) {
