@@ -17,17 +17,18 @@ a {
    margin: 10;
    margin-left: -12.5%;
    margin-top:-11.7%;
-   padding: 1% 0px 0;
+   padding: 1% 0 0;
    background: orange  repeat-x 0 -110px;
    line-height: 100%;
    width: 120%;
 
-   border-radius: 2em;
    -webkit-border-radius: 2em;   /* para Chrome */
    -moz-border-radius: 2em;   /* para Mozilla */
+   border-radius: 2em;
 
    -webkit-box-shadow: 0 1px 3px rgba(0,0,0, .4);   /* para Chrome */
    -moz-box-shadow: 0 1px 3px rgba(0,0,0, .4);   /* para Mozilla */
+   box-shadow: 0 1px 3px rgba(0,0,0, .4);
 }
 #nav li, form {
    margin: 0 5px;
@@ -48,7 +49,8 @@ a {
 
    -webkit-border-radius: 1.6em;   /* para Chrome */
    -moz-border-radius: 1.6em;   /* para Mozilla */
-   
+   border-radius: 1.6em;
+
    text-shadow: 0 1px 1px rgba(0,0,0, .3);
 }
 
@@ -65,7 +67,8 @@ a {
 
    -webkit-border-radius: 1.6em;   /* para Chrome */
    -moz-border-radius: 1.6em;   /* para Mozilla */
-   
+   border-radius: 1.6em;
+
    text-shadow: 0 1px 1px rgba(0,0,0, .3);
 }
 
@@ -95,6 +98,7 @@ a {
 
    -webkit-box-shadow: none;
    -moz-box-shadow: none;
+   box-shadow: none;
 }
 
 #nav ul a:hover {
@@ -103,6 +107,7 @@ a {
 
    -webkit-border-radius: 0;   /* para Chrome */
    -moz-border-radius: 0;   /* para Mozilla */
+   border-radius: 0;
 
    text-shadow: 0 1px 1px rgba(0,0,0, .1);
 }
@@ -154,6 +159,10 @@ a {
 
    -webkit-border-top-right-radius: 9px;   /* para Chrome */
    -moz-border-radius-topright: 9px;   /* para Mozilla */
+
+   border-top-left-radius: 9px;
+   border-top-right-radius: 9px;
+
 }
 #nav ul li:last-child > a {
    -webkit-border-bottom-left-radius: 9px;   /* para Chrome */
@@ -161,6 +170,9 @@ a {
 
    -webkit-border-bottom-right-radius: 9px;   /* para Chrome */
    -moz-border-radius-bottomright: 9px;   /* para Mozilla */
+
+   border-bottom-left-radius: 9px;
+   border-bottom-right-radius: 9px;
 }
 
 
@@ -197,6 +209,7 @@ html[xmlns] #nav {
 #nUsuario, #clave, #buscar {
    -webkit-border-radius: 1.6em;   /* para Chrome */
    -moz-border-radius: 1.6em;   /* para Mozilla */
+   border-radius: 1.6em;
 }
  
 .boton{ 
@@ -205,7 +218,7 @@ html[xmlns] #nav {
     font-weight:bold; 
     color:#0000FF; 
     background:#A4C1FF; 
-    border:0px; 
+    border:0; 
     width:120px; 
     height:25px; 
 } 
@@ -213,6 +226,7 @@ html[xmlns] #nav {
 #buscar {
    -webkit-border-radius: 1.6em;   /* para Chrome */
    -moz-border-radius: 1.6em;   /* para Mozilla */
+   border-radius: 1.6em;
 }
 
 /* //////////////////////////////// CATÁLOGO //////////////////////////////////*/
@@ -272,7 +286,7 @@ html[xmlns] #nav {
 }
 
 .catalogo td{
-   vertical-align:center;
+   vertical-align:middle;
    
    background-color:#FFFFFF;
 
@@ -285,13 +299,13 @@ html[xmlns] #nav {
    color: #000000;
 }
 .catalogo tr:last-child td{
-   border-width:0px 1px 0px 0px;
+   border-width:0 1px 0 0;
 }
 .catalogo tr td:last-child{
-   border-width:0px 0px 1px 0px;
+   border-width:0 0 1px 0;
 }
 .catalogo tr:last-child td:last-child{
-   border-width:0px 0px 0px 0px;
+   border-width:0 0 0 0;
 }
 .catalogo tr:first-child td{
       background:-o-linear-gradient(bottom, #DEA004 5%, #FF6161 100%);
@@ -303,7 +317,7 @@ html[xmlns] #nav {
    background-color:#DEA004;
 
    text-align:center;
-   border-width:0px 0px 1px 1px;
+   border-width:0 0 1px 1px;
    font-size:14px;
    font-family: "Trebuchet MS";
    font-weight:bold;
@@ -319,10 +333,10 @@ html[xmlns] #nav {
    background-color:orange;
 }
 .catalogo tr:first-child td:first-child{
-   border-width:0px 0px 1px 0px;
+   border-width:0 0 1px 0;
 }
 .catalogo tr:first-child td:last-child{
-   border-width:0px 0px 1px 1px;
+   border-width:0 0 1px 1px;
 }
 
 #enlaceArticulo {
@@ -337,7 +351,8 @@ html[xmlns] #nav {
 
    -webkit-border-radius: 1.6em;   /* para Chrome */
    -moz-border-radius: 1.6em;   /* para Mozilla */
-   
+   border-radius: 1.6em;
+
    text-shadow: 0 1px 1px rgba(0,0,0, .3);
 }
 
@@ -359,16 +374,18 @@ html[xmlns] #nav {
     background: orange;
    -webkit-border-radius: 1.6em;   /* para Chrome */
    -moz-border-radius: 1.6em;   /* para Mozilla */ 
+   border-radius: 1.6em;
 }
 
 .campos {
    margin-left: 20%;
    margin-bottom: 1%;
-    font-family:verdana,arial;     /* tipo de letra */  
-    width: 60%;                 /* anchura de campos de formulario */  
-    font-size:10pt;                /* tamaño de la letra*/ 
-    -webkit-border-radius: 1.6em;   /* para Chrome */
+   font-family:verdana,arial;     /* tipo de letra */  
+   width: 60%;                 /* anchura de campos de formulario */  
+   font-size:10pt;                /* tamaño de la letra*/ 
+   -webkit-border-radius: 1.6em;   /* para Chrome */
    -moz-border-radius: 1.6em;   /* para Mozilla */  
+   border-radius: 1.6em;
 }  
 
 #registrar p{
@@ -381,22 +398,6 @@ html[xmlns] #nav {
 #botonRadio {
    margin-left: 45%;
 }
-
-.catalogo #imagenCabecera img {
-   float: center;
-   width: 300px;
-   border-image: orange 3px inset;
-   border-radius: 2px;
-}
-
-.catalogo #enlaceCompra a {
-   font-size: 2.5em;
-   color: orange;
-   border: orange 2px solid;
-   border-radius: 4px;
-   text-decoration: none;
-}
-
 
  /* ////////////////////// FICHA TÉCNICA /////////////////////*/
 
@@ -430,7 +431,8 @@ html[xmlns] #nav {
    text-align: center;
    -webkit-border-radius: 1.6em;   /* para Chrome */
    -moz-border-radius: 1.6em;   /* para Mozilla */
-   
+   border-radius: 1.6em;
+
    text-shadow: 0 1px 1px rgba(0,0,0, .3);
 }
 
@@ -453,7 +455,8 @@ html[xmlns] #nav {
    text-align: center;
    -webkit-border-radius: 1.6em;   /* para Chrome */
    -moz-border-radius: 1.6em;   /* para Mozilla */
-   
+   border-radius: 1.6em;
+
    text-shadow: 0 1px 1px rgba(0,0,0, .3);
 }
 
@@ -472,9 +475,9 @@ html[xmlns] #nav {
    font-weight: bold;
    text-align: center;
    letter-spacing: 1.6pt;
-   word-spacing: 0pt;
+   word-spacing: 0;
    line-height: 2.3;
    -webkit-border-radius: 1.6em;   /* para Chrome */
    -moz-border-radius: 1.6em;   /* para Mozilla */
-
+   border-radius: 1.6em;
 }
