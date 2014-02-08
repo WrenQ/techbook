@@ -1,7 +1,7 @@
 <% include top %>
 <h1 id="Exito"> Datos de <%= usr.usr_login %> </h1>
 <form id="registrar" action="/actualizarUsuario" method="post">
-    <center<p>Contraseña</p></center> <input type="password" class="campos" name="clave" value="<%= usr.usr_pass %>"><br>
+    <center><p>Contraseña</p></center> <input type="password" class="campos" name="clave" value="<%= usr.usr_pass %>"><br>
     <center><p>Nombre</p></center> <input type="text" class="campos" name="nombre" value="<%= usr.usr_nombre %>"><br>
     <center><p>Apellidos</p></center> <input type="text" class="campos" name="apellidos" value="<%= usr.usr_apell %>"><br>
     <center><p>Email</p></center> <input type="text" class="campos" name="mail" value="<%= usr.usr_emal %>"><br>
