@@ -94,7 +94,7 @@ module.exports = function (app) {
             if (results.length !== 0) {
                 usuario = results[0].usr_nombre;
                 usuarioLogin = results[0].usr_login;
-                res.render('index', { usuario : usuario });
+                res.render('index', { usuario : usuario, usuarioLogin: usuarioLogin});
             } else {
                 res.render('login', { texto: "Usuario o contraseña incorrectos.", title: "Inicio sesión", usuarios: usuarioModel, usuario: usuario, usuarioLogin: usuarioLogin});
             }
