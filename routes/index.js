@@ -55,7 +55,7 @@ module.exports = function (app) {
     app.get('/actualiza/:ean', function (req, res) {
         var ean = req.params.ean;
         articuloModel.getArticuloByEan(ean, function (err, results) {
-            res.render('modArticulo', {art: results[0]});
+            res.render('modArticulo', {art: results[0], usuario: usuario, usuarioLogin: usuarioLogin});
         });
     });
 
@@ -68,7 +68,7 @@ module.exports = function (app) {
             usuario = undefined;
             usuarioLogin = undefined;
             console.log('Me desconecto...');
-            res.render('index', {usuario: usuario});
+            res.render('index', {usuario: usuario, usuarioLogin: usuarioLogin});
         } else if (req.params.orden === "pedidos") {
             pedidoModel.getPedidos(usuarioLogin, function (err, results) {
                 res.render('pedidosUsuario', { ped: results, title: "Pedidos de " + usuarioLogin, pedidos: pedidoModel, n: results.length, usuario: usuario, usuarioLogin: usuarioLogin});
