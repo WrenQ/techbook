@@ -26,7 +26,7 @@ module.exports = function (app) {
     app.get('/smartphones/:tipo', function (req, res) {
         var tipo = req.params.tipo;
         articuloModel.getMoviles(tipo, function (err, results) {
-            res.render('catalogo', { art: results, title: "Smartphones " + tipo, articulos: articuloModel, n: results.length, usuario: usuario});
+            res.render('catalogo', { art: results, title: "Smartphones " + tipo, articulos: articuloModel, n: results.length, usuario: usuario, usuarioLogin: usuarioLogin});
         });
     });
 
