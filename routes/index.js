@@ -48,7 +48,7 @@ module.exports = function (app) {
     app.get('/compra/:ean', function (req, res) {
         var ean = req.params.ean;
         pedidoModel.setPedido(usuarioLogin, ean, function () {
-            res.render('exitoRegistro');
+            res.render('exitoRegistro', {usuario: usuario, usuarioLogin: usuarioLogin});
         });
     });
 
@@ -60,7 +60,7 @@ module.exports = function (app) {
     });
 
     app.get('/registro', function (req, res) {
-        res.render('registro');
+        res.render('registro', {usuario: usuario, usuarioLogin: usuarioLogin});
     });
 
     app.get('/:orden', function (req, res) {
