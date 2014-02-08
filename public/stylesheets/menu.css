@@ -487,9 +487,11 @@ html[xmlns] #nav {
 
 
 #pie {
-   margin-left: -2.5%;
+   margin-left: 4%;
+   margin-top: 10%;
+
    background: orange  repeat-x 0 -110px;
-   width: 100%;
+   width: 120%;
 
    border-radius: 2em;
    -webkit-border-radius: 2em;   /* para Chrome */
@@ -532,4 +534,8 @@ html[xmlns] #nav {
 #pie a:hover {
    background: white;
    color: orange;
+}
+
+footer{
+   position: absolute;
 }
