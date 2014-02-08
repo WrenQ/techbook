@@ -18,7 +18,7 @@ module.exports = function (app) {
     app.get('/tablets/:pulgadas', function (req, res) {
         var pulgadas = req.params.pulgadas;
         articuloModel.getTablets(pulgadas, function (err, results) {
-            res.render('catalogo', { art: results, title: "Tablets " + pulgadas + "\"", articulos: articuloModel, n: results.length });
+            res.render('catalogo', { art: results, title: "Tablets " + pulgadas + "\"", articulos: articuloModel, n: results.length, usuario: usuario, usuarioLogin: usuarioLogin});
         });
     });
 
@@ -33,7 +33,7 @@ module.exports = function (app) {
     app.get('/smartTV/:pulgadas', function (req, res) {
         var pulgadas = req.params.pulgadas;
         articuloModel.getTVs(pulgadas, function (err, results) {
-            res.render('catalogo', { art: results, title: "Smart TVs " + pulgadas + "\"", articulos: articuloModel, n: results.length});
+            res.render('catalogo', { art: results, title: "Smart TVs " + pulgadas + "\"", articulos: articuloModel, n: results.length, usuario: usuario, usuarioLogin: usuarioLogin});
         });
     });
 
@@ -41,7 +41,7 @@ module.exports = function (app) {
     app.get('/catalogo/:modelo', function (req, res) {
         var modelo = req.params.modelo;
         articuloModel.getArticulosCatalogo(modelo, function (err, results) {
-            res.render('fichaTecnica', {art: results[0], articulos: articuloModel, usuarioLogin: usuarioLogin});
+            res.render('fichaTecnica', {art: results[0], articulos: articuloModel, usuario: usuario, usuarioLogin: usuarioLogin});
         });
     });
 
@@ -71,13 +71,13 @@ module.exports = function (app) {
             res.render('index', {usuario: usuario});
         } else if (req.params.orden === "pedidos") {
             pedidoModel.getPedidos(usuarioLogin, function (err, results) {
-                res.render('pedidosUsuario', { ped: results, title: "Pedidos de " + usuarioLogin, pedidos: pedidoModel, n: results.length});
+                res.render('pedidosUsuario', { ped: results, title: "Pedidos de " + usuarioLogin, pedidos: pedidoModel, n: results.length, usuario: usuario, usuarioLogin: usuarioLogin});
             });
         } else if (req.params.orden === "nuevoArticulo") {
-            res.render('altaArticulo', {usuario: usuario});
+            res.render('altaArticulo', {usuario: usuario, usuarioLogin: usuarioLogin});
         } else if (req.params.orden === "cuenta") {
             usuarioModel.getUserData(usuarioLogin, function (err, results) {
-                res.render('datosUsuario', {usr: results[0]});
+                res.render('datosUsuario', {usr: results[0], usuario: usuario, usuarioLogin: usuarioLogin});
             });
         }
     });
@@ -85,7 +85,7 @@ module.exports = function (app) {
     app.post('/busqueda', function (req, res) {
         console.log(req.body.buscar);
         articuloModel.getArticulos(req.body.buscar, function (err, results) {
-            res.render('catalogo', { art: results, title: "Resultados de la búsqueda", articulos: articuloModel, n: results.length});
+            res.render('catalogo', { art: results, title: "Resultados de la búsqueda", articulos: articuloModel, n: results.length, usuario: usuario, usuarioLogin: usuarioLogin});
         });
     });
 
@@ -96,7 +96,7 @@ module.exports = function (app) {
                 usuarioLogin = results[0].usr_login;
                 res.render('index', { usuario : usuario });
             } else {
-                res.render('login', { texto: "Usuario o contraseña incorrectos.", title: "Inicio sesión", usuarios: usuarioModel });
+                res.render('login', { texto: "Usuario o contraseña incorrectos.", title: "Inicio sesión", usuarios: usuarioModel, usuario: usuario, usuarioLogin: usuarioLogin});
             }
         });
     });
