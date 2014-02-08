@@ -5,8 +5,8 @@
 var articuloModel = require('../models/articulos');
 var usuarioModel = require('../models/usuarios');
 var pedidoModel = require('../models/pedidos');
-var usuario = undefined;
-var usuarioLogin = undefined;
+var usuario;
+var usuarioLogin;
 
 //Ruteo de la aplicación
 module.exports = function (app) {
