@@ -481,3 +481,53 @@ html[xmlns] #nav {
    -moz-border-radius: 1.6em;   /* para Mozilla */
    border-radius: 1.6em;
 }
+
+
+/*///////////////////////////// PIE /////////////////////*/
+
+
+
+#pie {
+   margin-left: -2.5%;
+   background: orange  repeat-x 0 -110px;
+   width: 100%;
+
+   border-radius: 2em;
+   -webkit-border-radius: 2em;   /* para Chrome */
+   -moz-border-radius: 2em;   /* para Mozilla */
+
+   -webkit-box-shadow: 0 1px 3px rgba(0,0,0, .4);   /* para Chrome */
+   -moz-box-shadow: 0 1px 3px rgba(0,0,0, .4);   /* para Mozilla */
+   display: inline-block;
+}
+#pie li{
+   margin: 0 5px;
+   padding: 0 0 8px;
+   float: left;
+   position: relative;
+   list-style: none;
+   margin-left: 5%;
+}
+
+
+/*Estado normal del enlace*/
+#pie a {
+   font-family: "Trebuchet MS";
+   font-size: 1.3em;
+   font-weight: bold;
+   color: #e7e5e5;
+   text-decoration: none;
+   display: block;
+   padding:  8px 20px;
+   margin: 0;
+
+   -webkit-border-radius: 1.6em;   /* para Chrome */
+   -moz-border-radius: 1.6em;   /* para Mozilla */
+   
+   text-shadow: 0 1px 1px rgba(0,0,0, .3);
+}
+
+#pie a:hover {
+   background: white;
+   color: orange;
+}
