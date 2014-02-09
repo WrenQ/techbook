@@ -402,18 +402,20 @@ html[xmlns] #nav {
 
 #fotoLink {
    list-style: none;
-   display: inline;
    float:left;
+   margin-left: 18%;
 }
 
 #fotoLink li{
    list-style: none;
-   display: inline;
-   float: left
+   float: left;
+   
 }
 
 #fotoLink img {
    width: 400px;
+   padding-bottom: 40px;
+   
 }
 
 #fotoLink li a{
@@ -424,14 +426,13 @@ html[xmlns] #nav {
    text-decoration: none;
    display: block;
    padding:  8px 20px;
-   margin: 0;
+   margin-left: 130px;
    background: orange;
    color: white;
    text-align: center;
    -webkit-border-radius: 1.6em;   /* para Chrome */
    -moz-border-radius: 1.6em;   /* para Mozilla */
-   border-radius: 1.6em;
-
+   
    text-shadow: 0 1px 1px rgba(0,0,0, .3);
 }
 

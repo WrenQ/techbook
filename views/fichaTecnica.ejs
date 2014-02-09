@@ -3,11 +3,11 @@
     <ul id="fotoLink">
         <li><img src ="<%= art.art_imagen %>" id="imagenCabecera"></img></li>
         <% if (usuarioLogin === "admin") { %>
-        <center><li><a href="/actualiza/<%= art.art_ean %>" name="comprar" id="enlaceCompra" > Cambiar datos (<%= art.art_pvp %> €)</a></li></center>
+        <li><a href="/actualiza/<%= art.art_ean %>" name="comprar" id="enlaceCompra" > Cambiar datos (<%= art.art_pvp %> €)</a></li>
         <% } else if (usuarioLogin != undefined) {%>
             <center><li><a href="/compra/<%= art.art_ean %>" name="comprar" id="enlaceCompra" > Comprar </a></li></center>
         <% } %>
-    </ul> <br>
+    </ul> 
     <table  cellspacing="0">
         <tr>
             <td>
