@@ -506,7 +506,7 @@ html[xmlns] #nav {
 }
 #pie li{
    margin: 0 5px;
-   padding: 0 0 8px;
+   padding: 0 0 8px 0;
    float: left;
    position: relative;
    list-style: none;
