@@ -15,12 +15,12 @@ a {
 
 #nav {
    margin: 10;
-   margin-left: -12.5%;
+   margin-left: -20.5%;
    margin-top:-11.7%;
    padding: 1% 0 0;
    background: orange  repeat-x 0 -110px;
    line-height: 100%;
-   width: 120%;
+   width: 140%;
 
    -webkit-border-radius: 2em;   /* para Chrome */
    -moz-border-radius: 2em;   /* para Mozilla */
